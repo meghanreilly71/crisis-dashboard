@@ -1,0 +1,21 @@
+# ── data files ────────────────────────────────────────────────────────────────
+# All CSVs exceed GitHub's 100 MB file limit.
+# Store raw data externally (e.g. institutional drive, Zenodo, OSF).
+*.csv
+
+# ── macOS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/

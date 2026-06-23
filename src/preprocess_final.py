@@ -17,11 +17,22 @@ DATE_MAX = pd.Timestamp("2023-12-31")
 
 MIN_WORD_COUNT = 100
 
-# Columns from a prior migration-only pipeline that are not used in this project.
-RETIRED_COLS = [
+# Columns to drop from the climate corpus (NLP artefacts + vulnerability flags).
+CLIMATE_DROP_COLS = [
+    "processed", "climate_related", "matched_keywords_title", "matched_keywords_body",
+    "matched_keywords_all", "n_hits_title_total", "n_hits_body_total",
+    "topic", "probability", "macro",
+    "PERSON", "ORG", "GPE",
+    "General", "Migrants_Refugees", "Children", "Elderly", "Poor", "Other_Vulnerable",
+    "Gender_and_Sexuality", "Disabled", "References_Vulnerable_Groups",
+]
+
+# Columns to drop from the migration corpus (NLP artefacts).
+# topic_label and topic_meta are NOT listed here — they are renamed to label/meta
+# in Step 1 of process_migration() before any dropping occurs.
+MIGRATION_DROP_COLS = [
     "processed", "nouns", "adjectives", "verbs",
-    "topic", "topic_norm", "topic_label",
-    "topic_meta", "topic_meta_original", "probability",
+    "migrations_related", "topic", "topic_norm", "topic_meta_original", "probability",
 ]
 
 # Nexis boilerplate pattern (compiled once).
@@ -154,8 +165,19 @@ def process_climate(
     n0 = len(df)
     print(f"  Raw rows: {n0:,}  |  columns: {list(df.columns)}")
 
-    # Step 1 — fix doubled titles ────────────────────────────────────────────
-    step(1, "Fix doubled titles", "climate")
+    # Step 1 — drop unused columns ───────────────────────────────────────────
+    step(1, "Drop unused climate columns (safe check)", "climate")
+    present = [c for c in CLIMATE_DROP_COLS if c in df.columns]
+    absent  = [c for c in CLIMATE_DROP_COLS if c not in df.columns]
+    print(f"     dropping ({len(present)}): {present}")
+    if absent:
+        print(f"     already absent ({len(absent)}): {absent}")
+    if present:
+        df = df.drop(columns=present)
+    print(f"     retained columns: {list(df.columns)}")
+
+    # Step 2 — fix doubled titles ────────────────────────────────────────────
+    step(2, "Fix doubled titles", "climate")
     before = len(df)
     sample = df["title"].iloc[0]
     df["title"] = df["title"].map(fix_doubled_title)
@@ -163,8 +185,8 @@ def process_climate(
     print(f"     sample after : {df['title'].iloc[0]!r}")
     row_report(before, len(df), "no rows dropped — transformation only")
 
-    # Step 2 — strip Nexis boilerplate ───────────────────────────────────────
-    step(2, "Strip Nexis boilerplate from body", "climate")
+    # Step 3 — strip Nexis boilerplate ───────────────────────────────────────
+    step(3, "Strip Nexis boilerplate from body", "climate")
     before = len(df)
     wc_before = df["body"].dropna().str.split().str.len().median()
     df["body"] = df["body"].map(strip_boilerplate)
@@ -172,8 +194,8 @@ def process_climate(
     print(f"     median body words: {wc_before:.0f} → {wc_after:.0f}")
     row_report(before, len(df), "no rows dropped — transformation only")
 
-    # Step 3 — parse dates; clip to shared time window ───────────────────────
-    step(3, "Parse dates + clip to 2014-01-01 → 2023-12-31", "climate")
+    # Step 4 — parse dates; clip to shared time window ───────────────────────
+    step(4, "Parse dates + clip to 2014-01-01 → 2023-12-31", "climate")
     before = len(df)
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
     null_dates = df["date"].isnull().sum()
@@ -185,17 +207,17 @@ def process_climate(
     row_report(before, len(df), "outside 2014–2023 dropped")
     print(f"     date range: {df['date'].min().date()} → {df['date'].max().date()}")
 
-    # Step 4 — normalize outlet names ────────────────────────────────────────
-    step(4, "Normalize outlet → outlet_clean", "climate")
+    # Step 5 — normalize outlet names ────────────────────────────────────────
+    step(5, "Normalize outlet → outlet_clean", "climate")
     before = len(df)
     df["outlet_clean"] = df["outlet"].map(outlet_map)
     unmapped = df["outlet_clean"].isnull().sum()
     print(f"     mapping used: {outlet_map}")
-    print(f"     unmapped values (will be dropped in step 5): {unmapped:,}")
+    print(f"     unmapped values (will be dropped in step 6): {unmapped:,}")
     row_report(before, len(df), "no rows dropped yet")
 
-    # Step 5 — filter to agreed outlet set ───────────────────────────────────
-    step(5, "Filter to agreed outlet set", "climate")
+    # Step 6 — filter to agreed outlet set ───────────────────────────────────
+    step(6, "Filter to agreed outlet set", "climate")
     before = len(df)
     dropped_outlets = df[~df["outlet_clean"].isin(keep_outlets)]["outlet"].value_counts()
     if len(dropped_outlets):
@@ -205,22 +227,28 @@ def process_climate(
     df = df[df["outlet_clean"].isin(keep_outlets)].copy()
     row_report(before, len(df), f"keep_outlets={sorted(keep_outlets)}")
 
-    # Step 6 — compute word_count ────────────────────────────────────────────
-    step(6, "Compute word_count from cleaned body", "climate")
+    # Step 7 — compute word_count ────────────────────────────────────────────
+    step(7, "Compute word_count from cleaned body", "climate")
     before = len(df)
     df["word_count"] = word_count(df["body"])
     print(f"     word_count: min={df['word_count'].min()}  "
           f"median={df['word_count'].median():.0f}  max={df['word_count'].max()}")
     row_report(before, len(df), "no rows dropped — computation only")
 
-    # Step 7 — drop short articles ───────────────────────────────────────────
-    step(7, f"Drop articles with word_count < {MIN_WORD_COUNT}", "climate")
+    # Step 8 — drop short articles ───────────────────────────────────────────
+    step(8, f"Drop articles with word_count < {MIN_WORD_COUNT}", "climate")
     before = len(df)
     df = df[df["word_count"] >= MIN_WORD_COUNT].copy()
     row_report(before, len(df), f"word_count < {MIN_WORD_COUNT}")
 
     # Recalculate word_count on the filtered set (removes any rounding artefacts)
     df["word_count"] = word_count(df["body"])
+
+    print(f"\n  Topic label coverage [climate]:")
+    print(f"     label nulls : {df['label'].isnull().sum():,}")
+    print(f"     meta  nulls : {df['meta'].isnull().sum():,}")
+    print(f"     label sample: {df['label'].dropna().unique()[:5].tolist()}")
+    print(f"     meta  sample: {df['meta'].dropna().unique()[:5].tolist()}")
 
     return df
 
@@ -248,8 +276,32 @@ def process_migration(
         df = df.drop(columns=["Unnamed: 0"])
         print("  Dropped stray 'Unnamed: 0' index column.")
 
-    # Step 1 — fix doubled titles ────────────────────────────────────────────
-    step(1, "Fix doubled titles", "migration")
+    # Step 1 — rename topic label columns to shared schema ───────────────────
+    step(1, "Rename topic_label → label, topic_meta → meta", "migration")
+    rename_map = {}
+    if "topic_label" in df.columns:
+        rename_map["topic_label"] = "label"
+    if "topic_meta" in df.columns:
+        rename_map["topic_meta"] = "meta"
+    if rename_map:
+        df = df.rename(columns=rename_map)
+        print(f"     renamed: {rename_map}")
+    else:
+        print("     WARNING: neither topic_label nor topic_meta found in columns")
+
+    # Step 2 — drop unused columns ───────────────────────────────────────────
+    step(2, "Drop unused migration columns (safe check)", "migration")
+    present = [c for c in MIGRATION_DROP_COLS if c in df.columns]
+    absent  = [c for c in MIGRATION_DROP_COLS if c not in df.columns]
+    print(f"     dropping ({len(present)}): {present}")
+    if absent:
+        print(f"     already absent ({len(absent)}): {absent}")
+    if present:
+        df = df.drop(columns=present)
+    print(f"     retained columns: {list(df.columns)}")
+
+    # Step 3 — fix doubled titles ────────────────────────────────────────────
+    step(3, "Fix doubled titles", "migration")
     before = len(df)
     sample = df["title"].iloc[0]
     df["title"] = df["title"].map(fix_doubled_title)
@@ -257,8 +309,8 @@ def process_migration(
     print(f"     sample after : {df['title'].iloc[0]!r}")
     row_report(before, len(df), "no rows dropped — transformation only")
 
-    # Step 2 — strip Nexis boilerplate ───────────────────────────────────────
-    step(2, "Strip Nexis boilerplate from body", "migration")
+    # Step 4 — strip Nexis boilerplate ───────────────────────────────────────
+    step(4, "Strip Nexis boilerplate from body", "migration")
     before = len(df)
     wc_before = df["body"].dropna().str.split().str.len().median()
     df["body"] = df["body"].map(strip_boilerplate)
@@ -266,8 +318,8 @@ def process_migration(
     print(f"     median body words: {wc_before:.0f} → {wc_after:.0f}")
     row_report(before, len(df), "no rows dropped — transformation only")
 
-    # Step 3 — parse dates; drop nulls; clip ─────────────────────────────────
-    step(3, "Parse dates + drop nulls + clip to 2014-01-01 → 2023-12-31", "migration")
+    # Step 5 — parse dates; drop nulls; clip ─────────────────────────────────
+    step(5, "Parse dates + drop nulls + clip to 2014-01-01 → 2023-12-31", "migration")
     before = len(df)
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
     null_dates = df["date"].isnull().sum()
@@ -279,8 +331,8 @@ def process_migration(
     row_report(before, len(df), "outside 2014–2023 dropped")
     print(f"     date range: {df['date'].min().date()} → {df['date'].max().date()}")
 
-    # Step 4 — normalize outlet names via news_brand ─────────────────────────
-    step(4, "Normalize news_brand → outlet_clean", "migration")
+    # Step 6 — normalize outlet names via news_brand ─────────────────────────
+    step(6, "Normalize news_brand → outlet_clean", "migration")
     before = len(df)
     df["outlet_clean"] = df["news_brand"].map(brand_map)
     unmapped = df["outlet_clean"].isnull().sum()
@@ -288,8 +340,8 @@ def process_migration(
     print(f"     unmapped news_brand values: {unmapped:,}")
     row_report(before, len(df), "no rows dropped yet")
 
-    # Step 5 — filter to agreed outlet set ───────────────────────────────────
-    step(5, "Filter to agreed outlet set", "migration")
+    # Step 7 — filter to agreed outlet set ───────────────────────────────────
+    step(7, "Filter to agreed outlet set", "migration")
     before = len(df)
     dropped_brands = df[~df["outlet_clean"].isin(keep_outlets)]["news_brand"].value_counts()
     if len(dropped_brands):
@@ -301,32 +353,13 @@ def process_migration(
     df = df[df["outlet_clean"].isin(keep_outlets)].copy()
     row_report(before, len(df), f"keep_outlets={sorted(keep_outlets)}")
 
-    # Steps 8 & 9 — drop retired NLP columns and Unnamed artefacts ───────────
-    step(8, "Drop retired NLP columns (safe check)", "migration")
-    before = len(df)
-    present = [c for c in RETIRED_COLS if c in df.columns]
-    absent  = [c for c in RETIRED_COLS if c not in df.columns]
-    print(f"     dropping ({len(present)}): {present}")
-    if absent:
-        print(f"     already absent ({len(absent)}): {absent}")
-    if present:
-        df = df.drop(columns=present)
-    row_report(before, len(df), "no rows dropped — column removal only")
-
-    step(9, "Drop 'Unnamed: 0' if present", "migration")
-    if "Unnamed: 0" in df.columns:
-        df = df.drop(columns=["Unnamed: 0"])
-        print("     dropped.")
-    else:
-        print("     not present — skipped.")
-
-    # Step 10 — deduplication ────────────────────────────────────────────────
+    # Step 8 — deduplication ─────────────────────────────────────────────────
     # NOTE: Deduplication runs BEFORE the word_count filter so that the
     # online-vs-print preference is applied on the full post-clip set.
     # This ordering matches the original pipeline and is required to reproduce
     # the verified output row count (68,760).
 
-    step(10, "Dedup: (outlet_clean, date, title) — prefer Online over Print", "migration")
+    step(8, "Dedup: (outlet_clean, date, title) — prefer Online over Print", "migration")
     before = len(df)
     df["_edition"] = df["outlet"].str.extract(r"(Online|Print)", expand=False).fillna("other")
     print(f"     edition breakdown before dedup: {df['_edition'].value_counts().to_dict()}")
@@ -340,27 +373,33 @@ def process_migration(
     df = df.drop(columns=["_edition"])
     row_report(before, len(df), "Print editions superseded by Online dropped")
 
-    step(10, "Dedup: exact-body match (secondary pass)", "migration")
+    step(8, "Dedup: exact-body match (secondary pass)", "migration")
     before = len(df)
     df = df.drop_duplicates(subset=["body"], keep="first").copy()
     row_report(before, len(df), "exact-body duplicates dropped")
 
-    # Step 6 — compute word_count (after dedup, before filter) ───────────────
-    step(6, "Compute word_count from cleaned body", "migration")
+    # Step 9 — compute word_count (after dedup, before filter) ───────────────
+    step(9, "Compute word_count from cleaned body", "migration")
     before = len(df)
     df["word_count"] = word_count(df["body"])
     print(f"     word_count: min={df['word_count'].min()}  "
           f"median={df['word_count'].median():.0f}  max={df['word_count'].max()}")
     row_report(before, len(df), "no rows dropped — computation only")
 
-    # Step 7 — drop short articles ───────────────────────────────────────────
-    step(7, f"Drop articles with word_count < {MIN_WORD_COUNT}", "migration")
+    # Step 10 — drop short articles ──────────────────────────────────────────
+    step(10, f"Drop articles with word_count < {MIN_WORD_COUNT}", "migration")
     before = len(df)
     df = df[df["word_count"] >= MIN_WORD_COUNT].copy()
     row_report(before, len(df), f"word_count < {MIN_WORD_COUNT}")
 
     # Final word_count recalculation on clean, filtered set
     df["word_count"] = word_count(df["body"])
+
+    print(f"\n  Topic label coverage [migration]:")
+    print(f"     label nulls : {df['label'].isnull().sum():,}")
+    print(f"     meta  nulls : {df['meta'].isnull().sum():,}")
+    print(f"     label sample: {df['label'].dropna().unique()[:5].tolist()}")
+    print(f"     meta  sample: {df['meta'].dropna().unique()[:5].tolist()}")
 
     return df
 
@@ -448,8 +487,15 @@ def main() -> None:
     print(f"  corpus='climate'   → {len(clim):,} rows")
     print(f"  corpus='migration' → {len(mig):,} rows")
 
+    # Final column schemas
+    sep("Final column schemas")
+    print(f"  climate  columns: {list(clim.columns)}")
+    print(f"  migration columns: {list(mig.columns)}")
+
     # Save
     sep("Save outputs")
+    CLIMATE_OUT.parent.mkdir(parents=True, exist_ok=True)
+    MIGRATION_OUT.parent.mkdir(parents=True, exist_ok=True)
     clim.to_csv(CLIMATE_OUT,   index=False)
     mig.to_csv(MIGRATION_OUT,  index=False)
     print(f"  {CLIMATE_OUT}   ({len(clim):,} rows)")

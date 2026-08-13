@@ -1,0 +1,26 @@
+benchmark_idx,label,old,new,kind
+11,scientific,no,yes,affirmation of worksheet value
+12,scientific,no,yes,affirmation of worksheet value
+21,scientific,yes,no,explicit revision
+23,scientific,yes,no,explicit revision
+112,scientific,yes,no,explicit revision
+14,deservingness,yes,no,explicit revision
+29,deservingness,no,yes,explicit revision
+42,deservingness,no,yes,explicit revision
+43,deservingness,no,yes,explicit revision
+48,deservingness,no,yes,explicit revision
+53,deservingness,no,yes,explicit revision
+93,deservingness,no,yes,explicit revision
+4,responsibility,yes,no,explicit revision
+28,responsibility,yes,no,explicit revision
+50,responsibility,yes,no,explicit revision
+87,responsibility,yes,no,explicit revision
+7,othering,yes,no,explicit revision
+64,othering,yes,no,explicit revision
+2,agency,no,yes,derivation (agency_type='state')
+5,agency,no,yes,derivation (agency_type='state')
+8,agency,no,yes,derivation (agency_type='state')
+10,agency,no,yes,derivation (agency_type='state')
+11,agency,no,yes,derivation (agency_type='individual')
+16,agency,no,yes,derivation (agency_type='state')
+20,agency,no,yes,derivation (agency_type='state')

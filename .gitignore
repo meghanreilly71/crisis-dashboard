@@ -3,6 +3,58 @@
 # Store raw data externally (e.g. institutional drive, Zenodo, OSF).
 *.csv
 
+# ── Annotation outputs carrying quoted article text ───────────────────────────
+data/annotated/climate_promptB_run1.csv
+data/annotated/migration_promptB_run1.csv
+data/validity/disagreement_review_promptB_run1.xlsx
+codebook_recheck_worksheet.xlsx
+data/benchmark/benchmark_annotation_sheet.csv.numbers
+data/benchmark/benchmark_annotation_sheet_climate_expansion - climate_expansion.csv
+
+
+# human reference-standard lineage: first_pass -> n114 -> revision1 -> postfix
+!data/benchmark/snapshots/*.csv
+# validity / agreement / diagnostic tables
+!data/validity/*.csv
+# sample ID manifests (metadata only: idx, corpus, outlet, year, date, source_row)
+!data/benchmark/benchmark_ids.csv
+!data/benchmark/benchmark_ids_climate_expansion.csv
+# calibration results (token counts and costs, no text)
+!data/annotated/final_codebook/token_usage.csv
+
+!data/annotated/benchmark_stability/*.csv
+data/annotated/benchmark_stability/DEPRECATED_*.csv
+
+# Run logs and session tooling
+data/annotated/chunk_monitor.log
+data/annotated/chunk_monitor.out
+data/annotated/benchmark_stability_log.txt
+src/audit_project.py
+cleanup_manifest.csv
+
+# Superseded earlier versions of validation tooling. 
+src/benchmark_sample.py
+src/benchmark_stability.py
+src/calibrate_output_length.py
+src/calibrate_output_length_promptB.py
+
+# Stray editor/session artefacts
+.Rhistory
+*.Rhistory
+
+# Re-exclude, unconditionally and last: these match the negations above by
+# directory but carry quoted article text.
+data/annotated/final_codebook/promptB_run1_final.csv
+data/annotated/climate_promptB_run1.csv
+data/annotated/migration_promptB_run1.csv
+
+# ── LLM API payloads and responses ────────────────────────────────────────────
+*.jsonl
+
+# ── Internal working documents ────────────────────────────────────────────────
+PROJECT_CONTEXT.md
+PROJECT_CONTEXT_pipeline.md
+
 # ── macOS ──────────────────────────────────────────────────────────────────────
 .DS_Store
 

@@ -1,0 +1,495 @@
+benchmark_idx,corpus,label,human_value,llm_value,reason
+14,,agency_present,,no,"human blank / non-binary, LLM annotated"
+28,,agency_present,,yes,"human blank / non-binary, LLM annotated"
+57,,agency_present,,yes,"human blank / non-binary, LLM annotated"
+14,,conflict_present,,yes,"human blank / non-binary, LLM annotated"
+28,,conflict_present,,yes,"human blank / non-binary, LLM annotated"
+57,,conflict_present,,no,"human blank / non-binary, LLM annotated"
+14,,crisis_present,,yes,"human blank / non-binary, LLM annotated"
+25,migration,crisis_present,,yes,"human blank / non-binary, LLM annotated"
+26,migration,crisis_present,,,not applicable to this corpus for either annotator
+27,migration,crisis_present,,,not applicable to this corpus for either annotator
+28,,crisis_present,,,not applicable to this corpus for either annotator
+29,migration,crisis_present,,,not applicable to this corpus for either annotator
+30,migration,crisis_present,,,not applicable to this corpus for either annotator
+31,migration,crisis_present,,,not applicable to this corpus for either annotator
+32,migration,crisis_present,,,not applicable to this corpus for either annotator
+33,migration,crisis_present,,,not applicable to this corpus for either annotator
+34,migration,crisis_present,,,not applicable to this corpus for either annotator
+35,migration,crisis_present,,,not applicable to this corpus for either annotator
+36,migration,crisis_present,,,not applicable to this corpus for either annotator
+37,migration,crisis_present,,,not applicable to this corpus for either annotator
+38,migration,crisis_present,,,not applicable to this corpus for either annotator
+39,migration,crisis_present,,,not applicable to this corpus for either annotator
+40,migration,crisis_present,,,not applicable to this corpus for either annotator
+41,migration,crisis_present,,,not applicable to this corpus for either annotator
+42,migration,crisis_present,,,not applicable to this corpus for either annotator
+43,migration,crisis_present,,,not applicable to this corpus for either annotator
+44,migration,crisis_present,,,not applicable to this corpus for either annotator
+45,migration,crisis_present,,,not applicable to this corpus for either annotator
+46,migration,crisis_present,,,not applicable to this corpus for either annotator
+47,migration,crisis_present,,,not applicable to this corpus for either annotator
+48,migration,crisis_present,,,not applicable to this corpus for either annotator
+49,migration,crisis_present,,,not applicable to this corpus for either annotator
+50,migration,crisis_present,,,not applicable to this corpus for either annotator
+51,migration,crisis_present,,,not applicable to this corpus for either annotator
+52,migration,crisis_present,,,not applicable to this corpus for either annotator
+53,migration,crisis_present,,,not applicable to this corpus for either annotator
+54,migration,crisis_present,,,not applicable to this corpus for either annotator
+55,migration,crisis_present,,,not applicable to this corpus for either annotator
+56,migration,crisis_present,,,not applicable to this corpus for either annotator
+57,,crisis_present,,,not applicable to this corpus for either annotator
+58,migration,crisis_present,,,not applicable to this corpus for either annotator
+59,migration,crisis_present,,,not applicable to this corpus for either annotator
+60,migration,crisis_present,,,not applicable to this corpus for either annotator
+61,migration,crisis_present,,,not applicable to this corpus for either annotator
+62,migration,crisis_present,,,not applicable to this corpus for either annotator
+63,migration,crisis_present,,,not applicable to this corpus for either annotator
+64,migration,crisis_present,,,not applicable to this corpus for either annotator
+65,migration,crisis_present,,,not applicable to this corpus for either annotator
+66,migration,crisis_present,,,not applicable to this corpus for either annotator
+67,migration,crisis_present,,,not applicable to this corpus for either annotator
+68,migration,crisis_present,,,not applicable to this corpus for either annotator
+69,migration,crisis_present,,,not applicable to this corpus for either annotator
+70,migration,crisis_present,,,not applicable to this corpus for either annotator
+71,migration,crisis_present,,,not applicable to this corpus for either annotator
+72,migration,crisis_present,no,,"human annotated, LLM pass not run for this corpus"
+73,migration,crisis_present,,,not applicable to this corpus for either annotator
+74,migration,crisis_present,,,not applicable to this corpus for either annotator
+75,migration,crisis_present,,,not applicable to this corpus for either annotator
+76,migration,crisis_present,,,not applicable to this corpus for either annotator
+77,migration,crisis_present,,,not applicable to this corpus for either annotator
+78,migration,crisis_present,,,not applicable to this corpus for either annotator
+79,migration,crisis_present,,,not applicable to this corpus for either annotator
+80,migration,crisis_present,,,not applicable to this corpus for either annotator
+81,migration,crisis_present,,,not applicable to this corpus for either annotator
+82,migration,crisis_present,,,not applicable to this corpus for either annotator
+83,migration,crisis_present,,,not applicable to this corpus for either annotator
+84,migration,crisis_present,,,not applicable to this corpus for either annotator
+85,migration,crisis_present,,,not applicable to this corpus for either annotator
+86,migration,crisis_present,,,not applicable to this corpus for either annotator
+87,migration,crisis_present,,,not applicable to this corpus for either annotator
+88,migration,crisis_present,,,not applicable to this corpus for either annotator
+89,migration,crisis_present,,,not applicable to this corpus for either annotator
+90,migration,crisis_present,,,not applicable to this corpus for either annotator
+91,migration,crisis_present,,,not applicable to this corpus for either annotator
+92,migration,crisis_present,,,not applicable to this corpus for either annotator
+93,migration,crisis_present,,,not applicable to this corpus for either annotator
+94,migration,crisis_present,,,not applicable to this corpus for either annotator
+95,migration,crisis_present,,,not applicable to this corpus for either annotator
+96,migration,crisis_present,,,not applicable to this corpus for either annotator
+97,migration,crisis_present,,,not applicable to this corpus for either annotator
+98,migration,crisis_present,,,not applicable to this corpus for either annotator
+99,migration,crisis_present,,,not applicable to this corpus for either annotator
+14,,deservingness_present,,yes,"human blank / non-binary, LLM annotated"
+28,,deservingness_present,,no,"human blank / non-binary, LLM annotated"
+57,,deservingness_present,,no,"human blank / non-binary, LLM annotated"
+14,,economic_present,,yes,"human blank / non-binary, LLM annotated"
+28,,economic_present,,yes,"human blank / non-binary, LLM annotated"
+57,,economic_present,,yes,"human blank / non-binary, LLM annotated"
+14,,human_interest_present,,yes,"human blank / non-binary, LLM annotated"
+28,,human_interest_present,,no,"human blank / non-binary, LLM annotated"
+57,,human_interest_present,,no,"human blank / non-binary, LLM annotated"
+0,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+1,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+2,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+3,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+4,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+5,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+6,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+7,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+8,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+9,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+10,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+11,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+12,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+12,climate,humanitarian_present,yes,,"human annotated, LLM pass not run for this corpus"
+13,climate,humanitarian_present,,yes,"human blank / non-binary, LLM annotated"
+14,,humanitarian_present,,,not applicable to this corpus for either annotator
+15,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+16,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+17,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+18,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+19,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+20,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+21,climate,humanitarian_present,yes,,"human annotated, LLM pass not run for this corpus"
+22,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+23,climate,humanitarian_present,yes,,"human annotated, LLM pass not run for this corpus"
+24,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+25,climate,humanitarian_present,,,not applicable to this corpus for either annotator
+25,migration,humanitarian_present,yes,,"human annotated, LLM pass not run for this corpus"
+28,,humanitarian_present,,no,"human blank / non-binary, LLM annotated"
+57,,humanitarian_present,,no,"human blank / non-binary, LLM annotated"
+14,,othering_present,,yes,"human blank / non-binary, LLM annotated"
+28,,othering_present,,yes,"human blank / non-binary, LLM annotated"
+57,,othering_present,,yes,"human blank / non-binary, LLM annotated"
+0,climate,policy_present,,,not applicable to this corpus for either annotator
+1,climate,policy_present,,,not applicable to this corpus for either annotator
+2,climate,policy_present,,,not applicable to this corpus for either annotator
+3,climate,policy_present,,,not applicable to this corpus for either annotator
+4,climate,policy_present,,,not applicable to this corpus for either annotator
+5,climate,policy_present,,,not applicable to this corpus for either annotator
+6,climate,policy_present,,,not applicable to this corpus for either annotator
+7,climate,policy_present,,,not applicable to this corpus for either annotator
+8,climate,policy_present,,,not applicable to this corpus for either annotator
+9,climate,policy_present,,,not applicable to this corpus for either annotator
+10,climate,policy_present,,,not applicable to this corpus for either annotator
+11,climate,policy_present,,,not applicable to this corpus for either annotator
+12,climate,policy_present,,,not applicable to this corpus for either annotator
+12,climate,policy_present,yes,,"human annotated, LLM pass not run for this corpus"
+13,climate,policy_present,,yes,"human blank / non-binary, LLM annotated"
+14,,policy_present,,,not applicable to this corpus for either annotator
+15,climate,policy_present,,,not applicable to this corpus for either annotator
+16,climate,policy_present,,,not applicable to this corpus for either annotator
+17,climate,policy_present,,,not applicable to this corpus for either annotator
+18,climate,policy_present,,,not applicable to this corpus for either annotator
+19,climate,policy_present,,,not applicable to this corpus for either annotator
+20,climate,policy_present,,,not applicable to this corpus for either annotator
+21,climate,policy_present,yes,,"human annotated, LLM pass not run for this corpus"
+22,climate,policy_present,,,not applicable to this corpus for either annotator
+23,climate,policy_present,yes,,"human annotated, LLM pass not run for this corpus"
+24,climate,policy_present,,,not applicable to this corpus for either annotator
+25,climate,policy_present,,,not applicable to this corpus for either annotator
+25,migration,policy_present,yes,,"human annotated, LLM pass not run for this corpus"
+28,,policy_present,,no,"human blank / non-binary, LLM annotated"
+57,,policy_present,,yes,"human blank / non-binary, LLM annotated"
+14,,responsibility_present,,no,"human blank / non-binary, LLM annotated"
+28,,responsibility_present,,no,"human blank / non-binary, LLM annotated"
+57,,responsibility_present,,yes,"human blank / non-binary, LLM annotated"
+14,,scientific_present,,no,"human blank / non-binary, LLM annotated"
+25,migration,scientific_present,,no,"human blank / non-binary, LLM annotated"
+26,migration,scientific_present,,,not applicable to this corpus for either annotator
+27,migration,scientific_present,,,not applicable to this corpus for either annotator
+28,,scientific_present,,,not applicable to this corpus for either annotator
+29,migration,scientific_present,,,not applicable to this corpus for either annotator
+30,migration,scientific_present,,,not applicable to this corpus for either annotator
+31,migration,scientific_present,,,not applicable to this corpus for either annotator
+32,migration,scientific_present,,,not applicable to this corpus for either annotator
+33,migration,scientific_present,,,not applicable to this corpus for either annotator
+34,migration,scientific_present,,,not applicable to this corpus for either annotator
+35,migration,scientific_present,,,not applicable to this corpus for either annotator
+36,migration,scientific_present,,,not applicable to this corpus for either annotator
+37,migration,scientific_present,,,not applicable to this corpus for either annotator
+38,migration,scientific_present,,,not applicable to this corpus for either annotator
+39,migration,scientific_present,,,not applicable to this corpus for either annotator
+40,migration,scientific_present,,,not applicable to this corpus for either annotator
+41,migration,scientific_present,,,not applicable to this corpus for either annotator
+42,migration,scientific_present,,,not applicable to this corpus for either annotator
+43,migration,scientific_present,,,not applicable to this corpus for either annotator
+44,migration,scientific_present,,,not applicable to this corpus for either annotator
+45,migration,scientific_present,,,not applicable to this corpus for either annotator
+46,migration,scientific_present,,,not applicable to this corpus for either annotator
+47,migration,scientific_present,,,not applicable to this corpus for either annotator
+48,migration,scientific_present,,,not applicable to this corpus for either annotator
+49,migration,scientific_present,,,not applicable to this corpus for either annotator
+50,migration,scientific_present,,,not applicable to this corpus for either annotator
+51,migration,scientific_present,,,not applicable to this corpus for either annotator
+52,migration,scientific_present,,,not applicable to this corpus for either annotator
+53,migration,scientific_present,,,not applicable to this corpus for either annotator
+54,migration,scientific_present,,,not applicable to this corpus for either annotator
+55,migration,scientific_present,,,not applicable to this corpus for either annotator
+56,migration,scientific_present,,,not applicable to this corpus for either annotator
+57,,scientific_present,,,not applicable to this corpus for either annotator
+58,migration,scientific_present,,,not applicable to this corpus for either annotator
+59,migration,scientific_present,,,not applicable to this corpus for either annotator
+60,migration,scientific_present,,,not applicable to this corpus for either annotator
+61,migration,scientific_present,,,not applicable to this corpus for either annotator
+62,migration,scientific_present,,,not applicable to this corpus for either annotator
+63,migration,scientific_present,,,not applicable to this corpus for either annotator
+64,migration,scientific_present,,,not applicable to this corpus for either annotator
+65,migration,scientific_present,,,not applicable to this corpus for either annotator
+66,migration,scientific_present,,,not applicable to this corpus for either annotator
+67,migration,scientific_present,,,not applicable to this corpus for either annotator
+68,migration,scientific_present,,,not applicable to this corpus for either annotator
+69,migration,scientific_present,,,not applicable to this corpus for either annotator
+70,migration,scientific_present,,,not applicable to this corpus for either annotator
+71,migration,scientific_present,,,not applicable to this corpus for either annotator
+72,migration,scientific_present,no,,"human annotated, LLM pass not run for this corpus"
+73,migration,scientific_present,,,not applicable to this corpus for either annotator
+74,migration,scientific_present,,,not applicable to this corpus for either annotator
+75,migration,scientific_present,,,not applicable to this corpus for either annotator
+76,migration,scientific_present,,,not applicable to this corpus for either annotator
+77,migration,scientific_present,,,not applicable to this corpus for either annotator
+78,migration,scientific_present,,,not applicable to this corpus for either annotator
+79,migration,scientific_present,,,not applicable to this corpus for either annotator
+80,migration,scientific_present,,,not applicable to this corpus for either annotator
+81,migration,scientific_present,,,not applicable to this corpus for either annotator
+82,migration,scientific_present,,,not applicable to this corpus for either annotator
+83,migration,scientific_present,,,not applicable to this corpus for either annotator
+84,migration,scientific_present,,,not applicable to this corpus for either annotator
+85,migration,scientific_present,,,not applicable to this corpus for either annotator
+86,migration,scientific_present,,,not applicable to this corpus for either annotator
+87,migration,scientific_present,,,not applicable to this corpus for either annotator
+88,migration,scientific_present,,,not applicable to this corpus for either annotator
+89,migration,scientific_present,,,not applicable to this corpus for either annotator
+90,migration,scientific_present,,,not applicable to this corpus for either annotator
+91,migration,scientific_present,,,not applicable to this corpus for either annotator
+92,migration,scientific_present,,,not applicable to this corpus for either annotator
+93,migration,scientific_present,,,not applicable to this corpus for either annotator
+94,migration,scientific_present,,,not applicable to this corpus for either annotator
+95,migration,scientific_present,,,not applicable to this corpus for either annotator
+96,migration,scientific_present,,,not applicable to this corpus for either annotator
+97,migration,scientific_present,,,not applicable to this corpus for either annotator
+98,migration,scientific_present,,,not applicable to this corpus for either annotator
+99,migration,scientific_present,,,not applicable to this corpus for either annotator
+14,,securitization_present,,no,"human blank / non-binary, LLM annotated"
+28,,securitization_present,,no,"human blank / non-binary, LLM annotated"
+57,,securitization_present,,no,"human blank / non-binary, LLM annotated"
+0,climate,security_present,,,not applicable to this corpus for either annotator
+1,climate,security_present,,,not applicable to this corpus for either annotator
+2,climate,security_present,,,not applicable to this corpus for either annotator
+3,climate,security_present,,,not applicable to this corpus for either annotator
+4,climate,security_present,,,not applicable to this corpus for either annotator
+5,climate,security_present,,,not applicable to this corpus for either annotator
+6,climate,security_present,,,not applicable to this corpus for either annotator
+7,climate,security_present,,,not applicable to this corpus for either annotator
+8,climate,security_present,,,not applicable to this corpus for either annotator
+9,climate,security_present,,,not applicable to this corpus for either annotator
+10,climate,security_present,,,not applicable to this corpus for either annotator
+11,climate,security_present,,,not applicable to this corpus for either annotator
+12,climate,security_present,,,not applicable to this corpus for either annotator
+12,climate,security_present,no,,"human annotated, LLM pass not run for this corpus"
+13,climate,security_present,,no,"human blank / non-binary, LLM annotated"
+14,,security_present,,,not applicable to this corpus for either annotator
+15,climate,security_present,,,not applicable to this corpus for either annotator
+16,climate,security_present,,,not applicable to this corpus for either annotator
+17,climate,security_present,,,not applicable to this corpus for either annotator
+18,climate,security_present,,,not applicable to this corpus for either annotator
+19,climate,security_present,,,not applicable to this corpus for either annotator
+20,climate,security_present,,,not applicable to this corpus for either annotator
+21,climate,security_present,no,,"human annotated, LLM pass not run for this corpus"
+22,climate,security_present,,,not applicable to this corpus for either annotator
+23,climate,security_present,yes,,"human annotated, LLM pass not run for this corpus"
+24,climate,security_present,,,not applicable to this corpus for either annotator
+25,climate,security_present,,,not applicable to this corpus for either annotator
+25,migration,security_present,no,,"human annotated, LLM pass not run for this corpus"
+28,,security_present,,yes,"human blank / non-binary, LLM annotated"
+57,,security_present,,no,"human blank / non-binary, LLM annotated"
+14,,skepticism_present,,no,"human blank / non-binary, LLM annotated"
+25,migration,skepticism_present,,no,"human blank / non-binary, LLM annotated"
+26,migration,skepticism_present,,,not applicable to this corpus for either annotator
+27,migration,skepticism_present,,,not applicable to this corpus for either annotator
+28,,skepticism_present,,,not applicable to this corpus for either annotator
+29,migration,skepticism_present,,,not applicable to this corpus for either annotator
+30,migration,skepticism_present,,,not applicable to this corpus for either annotator
+31,migration,skepticism_present,,,not applicable to this corpus for either annotator
+32,migration,skepticism_present,,,not applicable to this corpus for either annotator
+33,migration,skepticism_present,,,not applicable to this corpus for either annotator
+34,migration,skepticism_present,,,not applicable to this corpus for either annotator
+35,migration,skepticism_present,,,not applicable to this corpus for either annotator
+36,migration,skepticism_present,,,not applicable to this corpus for either annotator
+37,migration,skepticism_present,,,not applicable to this corpus for either annotator
+38,migration,skepticism_present,,,not applicable to this corpus for either annotator
+39,migration,skepticism_present,,,not applicable to this corpus for either annotator
+40,migration,skepticism_present,,,not applicable to this corpus for either annotator
+41,migration,skepticism_present,,,not applicable to this corpus for either annotator
+42,migration,skepticism_present,,,not applicable to this corpus for either annotator
+43,migration,skepticism_present,,,not applicable to this corpus for either annotator
+44,migration,skepticism_present,,,not applicable to this corpus for either annotator
+45,migration,skepticism_present,,,not applicable to this corpus for either annotator
+46,migration,skepticism_present,,,not applicable to this corpus for either annotator
+47,migration,skepticism_present,,,not applicable to this corpus for either annotator
+48,migration,skepticism_present,,,not applicable to this corpus for either annotator
+49,migration,skepticism_present,,,not applicable to this corpus for either annotator
+50,migration,skepticism_present,,,not applicable to this corpus for either annotator
+51,migration,skepticism_present,,,not applicable to this corpus for either annotator
+52,migration,skepticism_present,,,not applicable to this corpus for either annotator
+53,migration,skepticism_present,,,not applicable to this corpus for either annotator
+54,migration,skepticism_present,,,not applicable to this corpus for either annotator
+55,migration,skepticism_present,,,not applicable to this corpus for either annotator
+56,migration,skepticism_present,,,not applicable to this corpus for either annotator
+57,,skepticism_present,,,not applicable to this corpus for either annotator
+58,migration,skepticism_present,,,not applicable to this corpus for either annotator
+59,migration,skepticism_present,,,not applicable to this corpus for either annotator
+60,migration,skepticism_present,,,not applicable to this corpus for either annotator
+61,migration,skepticism_present,,,not applicable to this corpus for either annotator
+62,migration,skepticism_present,,,not applicable to this corpus for either annotator
+63,migration,skepticism_present,,,not applicable to this corpus for either annotator
+64,migration,skepticism_present,,,not applicable to this corpus for either annotator
+65,migration,skepticism_present,,,not applicable to this corpus for either annotator
+66,migration,skepticism_present,,,not applicable to this corpus for either annotator
+67,migration,skepticism_present,,,not applicable to this corpus for either annotator
+68,migration,skepticism_present,,,not applicable to this corpus for either annotator
+69,migration,skepticism_present,,,not applicable to this corpus for either annotator
+70,migration,skepticism_present,,,not applicable to this corpus for either annotator
+71,migration,skepticism_present,,,not applicable to this corpus for either annotator
+72,migration,skepticism_present,no,,"human annotated, LLM pass not run for this corpus"
+73,migration,skepticism_present,,,not applicable to this corpus for either annotator
+74,migration,skepticism_present,,,not applicable to this corpus for either annotator
+75,migration,skepticism_present,,,not applicable to this corpus for either annotator
+76,migration,skepticism_present,,,not applicable to this corpus for either annotator
+77,migration,skepticism_present,,,not applicable to this corpus for either annotator
+78,migration,skepticism_present,,,not applicable to this corpus for either annotator
+79,migration,skepticism_present,,,not applicable to this corpus for either annotator
+80,migration,skepticism_present,,,not applicable to this corpus for either annotator
+81,migration,skepticism_present,,,not applicable to this corpus for either annotator
+82,migration,skepticism_present,,,not applicable to this corpus for either annotator
+83,migration,skepticism_present,,,not applicable to this corpus for either annotator
+84,migration,skepticism_present,,,not applicable to this corpus for either annotator
+85,migration,skepticism_present,,,not applicable to this corpus for either annotator
+86,migration,skepticism_present,,,not applicable to this corpus for either annotator
+87,migration,skepticism_present,,,not applicable to this corpus for either annotator
+88,migration,skepticism_present,,,not applicable to this corpus for either annotator
+89,migration,skepticism_present,,,not applicable to this corpus for either annotator
+90,migration,skepticism_present,,,not applicable to this corpus for either annotator
+91,migration,skepticism_present,,,not applicable to this corpus for either annotator
+92,migration,skepticism_present,,,not applicable to this corpus for either annotator
+93,migration,skepticism_present,,,not applicable to this corpus for either annotator
+94,migration,skepticism_present,,,not applicable to this corpus for either annotator
+95,migration,skepticism_present,,,not applicable to this corpus for either annotator
+96,migration,skepticism_present,,,not applicable to this corpus for either annotator
+97,migration,skepticism_present,,,not applicable to this corpus for either annotator
+98,migration,skepticism_present,,,not applicable to this corpus for either annotator
+99,migration,skepticism_present,,,not applicable to this corpus for either annotator
+14,,solutions_present,,no,"human blank / non-binary, LLM annotated"
+25,migration,solutions_present,,yes,"human blank / non-binary, LLM annotated"
+26,migration,solutions_present,,,not applicable to this corpus for either annotator
+27,migration,solutions_present,,,not applicable to this corpus for either annotator
+28,,solutions_present,,,not applicable to this corpus for either annotator
+29,migration,solutions_present,,,not applicable to this corpus for either annotator
+30,migration,solutions_present,,,not applicable to this corpus for either annotator
+31,migration,solutions_present,,,not applicable to this corpus for either annotator
+32,migration,solutions_present,,,not applicable to this corpus for either annotator
+33,migration,solutions_present,,,not applicable to this corpus for either annotator
+34,migration,solutions_present,,,not applicable to this corpus for either annotator
+35,migration,solutions_present,,,not applicable to this corpus for either annotator
+36,migration,solutions_present,,,not applicable to this corpus for either annotator
+37,migration,solutions_present,,,not applicable to this corpus for either annotator
+38,migration,solutions_present,,,not applicable to this corpus for either annotator
+39,migration,solutions_present,,,not applicable to this corpus for either annotator
+40,migration,solutions_present,,,not applicable to this corpus for either annotator
+41,migration,solutions_present,,,not applicable to this corpus for either annotator
+42,migration,solutions_present,,,not applicable to this corpus for either annotator
+43,migration,solutions_present,,,not applicable to this corpus for either annotator
+44,migration,solutions_present,,,not applicable to this corpus for either annotator
+45,migration,solutions_present,,,not applicable to this corpus for either annotator
+46,migration,solutions_present,,,not applicable to this corpus for either annotator
+47,migration,solutions_present,,,not applicable to this corpus for either annotator
+48,migration,solutions_present,,,not applicable to this corpus for either annotator
+49,migration,solutions_present,,,not applicable to this corpus for either annotator
+50,migration,solutions_present,,,not applicable to this corpus for either annotator
+51,migration,solutions_present,,,not applicable to this corpus for either annotator
+52,migration,solutions_present,,,not applicable to this corpus for either annotator
+53,migration,solutions_present,,,not applicable to this corpus for either annotator
+54,migration,solutions_present,,,not applicable to this corpus for either annotator
+55,migration,solutions_present,,,not applicable to this corpus for either annotator
+56,migration,solutions_present,,,not applicable to this corpus for either annotator
+57,,solutions_present,,,not applicable to this corpus for either annotator
+58,migration,solutions_present,,,not applicable to this corpus for either annotator
+59,migration,solutions_present,,,not applicable to this corpus for either annotator
+60,migration,solutions_present,,,not applicable to this corpus for either annotator
+61,migration,solutions_present,,,not applicable to this corpus for either annotator
+62,migration,solutions_present,,,not applicable to this corpus for either annotator
+63,migration,solutions_present,,,not applicable to this corpus for either annotator
+64,migration,solutions_present,,,not applicable to this corpus for either annotator
+65,migration,solutions_present,,,not applicable to this corpus for either annotator
+66,migration,solutions_present,,,not applicable to this corpus for either annotator
+67,migration,solutions_present,,,not applicable to this corpus for either annotator
+68,migration,solutions_present,,,not applicable to this corpus for either annotator
+69,migration,solutions_present,,,not applicable to this corpus for either annotator
+70,migration,solutions_present,,,not applicable to this corpus for either annotator
+71,migration,solutions_present,,,not applicable to this corpus for either annotator
+72,migration,solutions_present,yes,,"human annotated, LLM pass not run for this corpus"
+73,migration,solutions_present,,,not applicable to this corpus for either annotator
+74,migration,solutions_present,,,not applicable to this corpus for either annotator
+75,migration,solutions_present,,,not applicable to this corpus for either annotator
+76,migration,solutions_present,,,not applicable to this corpus for either annotator
+77,migration,solutions_present,,,not applicable to this corpus for either annotator
+78,migration,solutions_present,,,not applicable to this corpus for either annotator
+79,migration,solutions_present,,,not applicable to this corpus for either annotator
+80,migration,solutions_present,,,not applicable to this corpus for either annotator
+81,migration,solutions_present,,,not applicable to this corpus for either annotator
+82,migration,solutions_present,,,not applicable to this corpus for either annotator
+83,migration,solutions_present,,,not applicable to this corpus for either annotator
+84,migration,solutions_present,,,not applicable to this corpus for either annotator
+85,migration,solutions_present,,,not applicable to this corpus for either annotator
+86,migration,solutions_present,,,not applicable to this corpus for either annotator
+87,migration,solutions_present,,,not applicable to this corpus for either annotator
+88,migration,solutions_present,,,not applicable to this corpus for either annotator
+89,migration,solutions_present,,,not applicable to this corpus for either annotator
+90,migration,solutions_present,,,not applicable to this corpus for either annotator
+91,migration,solutions_present,,,not applicable to this corpus for either annotator
+92,migration,solutions_present,,,not applicable to this corpus for either annotator
+93,migration,solutions_present,,,not applicable to this corpus for either annotator
+94,migration,solutions_present,,,not applicable to this corpus for either annotator
+95,migration,solutions_present,,,not applicable to this corpus for either annotator
+96,migration,solutions_present,,,not applicable to this corpus for either annotator
+97,migration,solutions_present,,,not applicable to this corpus for either annotator
+98,migration,solutions_present,,,not applicable to this corpus for either annotator
+99,migration,solutions_present,,,not applicable to this corpus for either annotator
+14,,victim_present,,no,"human blank / non-binary, LLM annotated"
+25,migration,victim_present,,yes,"human blank / non-binary, LLM annotated"
+26,migration,victim_present,,,not applicable to this corpus for either annotator
+27,migration,victim_present,,,not applicable to this corpus for either annotator
+28,,victim_present,,,not applicable to this corpus for either annotator
+29,migration,victim_present,,,not applicable to this corpus for either annotator
+30,migration,victim_present,,,not applicable to this corpus for either annotator
+31,migration,victim_present,,,not applicable to this corpus for either annotator
+32,migration,victim_present,,,not applicable to this corpus for either annotator
+33,migration,victim_present,,,not applicable to this corpus for either annotator
+34,migration,victim_present,,,not applicable to this corpus for either annotator
+35,migration,victim_present,,,not applicable to this corpus for either annotator
+36,migration,victim_present,,,not applicable to this corpus for either annotator
+37,migration,victim_present,,,not applicable to this corpus for either annotator
+38,migration,victim_present,,,not applicable to this corpus for either annotator
+39,migration,victim_present,,,not applicable to this corpus for either annotator
+40,migration,victim_present,,,not applicable to this corpus for either annotator
+41,migration,victim_present,,,not applicable to this corpus for either annotator
+42,migration,victim_present,,,not applicable to this corpus for either annotator
+43,migration,victim_present,,,not applicable to this corpus for either annotator
+44,migration,victim_present,,,not applicable to this corpus for either annotator
+45,migration,victim_present,,,not applicable to this corpus for either annotator
+46,migration,victim_present,,,not applicable to this corpus for either annotator
+47,migration,victim_present,,,not applicable to this corpus for either annotator
+48,migration,victim_present,,,not applicable to this corpus for either annotator
+49,migration,victim_present,,,not applicable to this corpus for either annotator
+50,migration,victim_present,,,not applicable to this corpus for either annotator
+51,migration,victim_present,,,not applicable to this corpus for either annotator
+52,migration,victim_present,,,not applicable to this corpus for either annotator
+53,migration,victim_present,,,not applicable to this corpus for either annotator
+54,migration,victim_present,,,not applicable to this corpus for either annotator
+55,migration,victim_present,,,not applicable to this corpus for either annotator
+56,migration,victim_present,,,not applicable to this corpus for either annotator
+57,,victim_present,,,not applicable to this corpus for either annotator
+58,migration,victim_present,,,not applicable to this corpus for either annotator
+59,migration,victim_present,,,not applicable to this corpus for either annotator
+60,migration,victim_present,,,not applicable to this corpus for either annotator
+61,migration,victim_present,,,not applicable to this corpus for either annotator
+62,migration,victim_present,,,not applicable to this corpus for either annotator
+63,migration,victim_present,,,not applicable to this corpus for either annotator
+64,migration,victim_present,,,not applicable to this corpus for either annotator
+65,migration,victim_present,,,not applicable to this corpus for either annotator
+66,migration,victim_present,,,not applicable to this corpus for either annotator
+67,migration,victim_present,,,not applicable to this corpus for either annotator
+68,migration,victim_present,,,not applicable to this corpus for either annotator
+69,migration,victim_present,,,not applicable to this corpus for either annotator
+70,migration,victim_present,,,not applicable to this corpus for either annotator
+71,migration,victim_present,,,not applicable to this corpus for either annotator
+72,migration,victim_present,no,,"human annotated, LLM pass not run for this corpus"
+73,migration,victim_present,,,not applicable to this corpus for either annotator
+74,migration,victim_present,,,not applicable to this corpus for either annotator
+75,migration,victim_present,,,not applicable to this corpus for either annotator
+76,migration,victim_present,,,not applicable to this corpus for either annotator
+77,migration,victim_present,,,not applicable to this corpus for either annotator
+78,migration,victim_present,,,not applicable to this corpus for either annotator
+79,migration,victim_present,,,not applicable to this corpus for either annotator
+80,migration,victim_present,,,not applicable to this corpus for either annotator
+81,migration,victim_present,,,not applicable to this corpus for either annotator
+82,migration,victim_present,,,not applicable to this corpus for either annotator
+83,migration,victim_present,,,not applicable to this corpus for either annotator
+84,migration,victim_present,,,not applicable to this corpus for either annotator
+85,migration,victim_present,,,not applicable to this corpus for either annotator
+86,migration,victim_present,,,not applicable to this corpus for either annotator
+87,migration,victim_present,,,not applicable to this corpus for either annotator
+88,migration,victim_present,,,not applicable to this corpus for either annotator
+89,migration,victim_present,,,not applicable to this corpus for either annotator
+90,migration,victim_present,,,not applicable to this corpus for either annotator
+91,migration,victim_present,,,not applicable to this corpus for either annotator
+92,migration,victim_present,,,not applicable to this corpus for either annotator
+93,migration,victim_present,,,not applicable to this corpus for either annotator
+94,migration,victim_present,,,not applicable to this corpus for either annotator
+95,migration,victim_present,,,not applicable to this corpus for either annotator
+96,migration,victim_present,,,not applicable to this corpus for either annotator
+97,migration,victim_present,,,not applicable to this corpus for either annotator
+98,migration,victim_present,,,not applicable to this corpus for either annotator
+99,migration,victim_present,,,not applicable to this corpus for either annotator

@@ -3,17 +3,18 @@ import pandas as pd
 from pathlib import Path
 
 # ── constants ─────────────────────────────────────────────────────────────────
-RANDOM_SEED  = 42
-SAMPLE_FRAC  = 0.10
+RANDOM_SEED = 42
+SAMPLE_FRAC = 0.10
 
-ROOT          = Path(__file__).parent.parent
-CLIMATE_IN    = ROOT / "data" / "processed" / "climate_clean.csv"
-MIGRATION_IN  = ROOT / "data" / "processed" / "migration_clean.csv"
-CLIMATE_OUT   = ROOT / "data" / "sampled"   / "climate_sample.csv"
-MIGRATION_OUT = ROOT / "data" / "sampled"   / "migration_sample.csv"
+ROOT = Path(__file__).parent.parent
+CLIMATE_IN = ROOT / "data" / "processed" / "climate_clean.csv"
+MIGRATION_IN = ROOT / "data" / "processed" / "migration_clean.csv"
+CLIMATE_OUT = ROOT / "data" / "sampled" / "climate_sample.csv"
+MIGRATION_OUT = ROOT / "data" / "sampled" / "migration_sample.csv"
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
+
 
 def sep(label: str) -> None:
     width = 68
@@ -46,16 +47,23 @@ def print_report(name: str, raw: pd.DataFrame, sample: pd.DataFrame) -> None:
     for year, n in year_counts.items():
         print(f"      {year}  {n:>6,}")
 
-    overlap_n = sample["corpus_overlap"].sum() if "corpus_overlap" in sample.columns else "N/A"
-    print(f"\n    corpus_overlap=True : {overlap_n:>6,}" if isinstance(overlap_n, int) else f"\n    corpus_overlap=True : {overlap_n}")
+    overlap_n = (
+        sample["corpus_overlap"].sum() if "corpus_overlap" in sample.columns else "N/A"
+    )
+    print(
+        f"\n    corpus_overlap=True : {overlap_n:>6,}"
+        if isinstance(overlap_n, int)
+        else f"\n    corpus_overlap=True : {overlap_n}"
+    )
 
     label_nulls = sample["label"].isnull().sum() if "label" in sample.columns else "N/A"
-    meta_nulls  = sample["meta"].isnull().sum()  if "meta"  in sample.columns else "N/A"
+    meta_nulls = sample["meta"].isnull().sum() if "meta" in sample.columns else "N/A"
     print(f"    label nulls         : {label_nulls}")
     print(f"    meta  nulls         : {meta_nulls}")
 
 
 # ── main ──────────────────────────────────────────────────────────────────────
+
 
 def main() -> None:
     sep("SAMPLE — stratified 10% sample from preprocessed corpora")
@@ -86,15 +94,15 @@ def main() -> None:
 
     # ── save ──────────────────────────────────────────────────────────────────
     sep("Saving samples")
-    clim_sample.to_csv(CLIMATE_OUT,   index=False)
-    mig_sample.to_csv(MIGRATION_OUT,  index=False)
+    clim_sample.to_csv(CLIMATE_OUT, index=False)
+    mig_sample.to_csv(MIGRATION_OUT, index=False)
     print(f"  {CLIMATE_OUT}   ({len(clim_sample):,} rows)")
     print(f"  {MIGRATION_OUT} ({len(mig_sample):,} rows)")
 
     # ── summary report ────────────────────────────────────────────────────────
     sep("Summary report")
-    print_report("climate",   clim, clim_sample)
-    print_report("migration", mig,  mig_sample)
+    print_report("climate", clim, clim_sample)
+    print_report("migration", mig, mig_sample)
 
     sep("SAMPLING COMPLETE")
     print()

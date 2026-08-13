@@ -1,0 +1,596 @@
+{
+  "generated_at": "2026-08-11T13:14:20.716830",
+  "run_number": 1,
+  "prompt_variant": "B",
+  "files": {
+    "climate": {
+      "path": "/Users/meghanreilly/Desktop/thesis/data/annotated/batch_climate_run1.jsonl",
+      "n_requests": 3229,
+      "size_mb": 37.32108211517334,
+      "annotate": 1070,
+      "skipped": 585,
+      "uploaded_file_id": "file-1CtSXBxAkARrhwx6nzWv8F"
+    },
+    "migration": {
+      "path": "/Users/meghanreilly/Desktop/thesis/data/annotated/batch_migration_run1.jsonl",
+      "n_requests": 8943,
+      "size_mb": 86.73784446716309,
+      "annotate": 2978,
+      "skipped": 4103,
+      "uploaded_file_id": "file-6RxXwaGtAxibCWfGHHbFyW"
+    }
+  },
+  "failed_submissions": {
+    "climate": {
+      "batch_id": "batch_6a7b0acca1c08190807797434594dbbb",
+      "file_id": "file-1CtSXBxAkARrhwx6nzWv8F",
+      "submitted_at": "2026-08-11T13:43:09.135926",
+      "n_requests": 3229,
+      "status": "validating",
+      "completed_count": 0,
+      "failed_count": 0
+    },
+    "migration": {
+      "batch_id": "batch_6a7b0addff788190b89436cffe572c11",
+      "file_id": "file-6RxXwaGtAxibCWfGHHbFyW",
+      "submitted_at": "2026-08-11T13:43:26.225527",
+      "n_requests": 8943,
+      "status": "failed",
+      "completed_count": 0,
+      "failed_count": 0
+    }
+  },
+  "batch_ids": {},
+  "chunks": {
+    "climate": [
+      {
+        "line_start": 0,
+        "line_end": 420,
+        "n_requests": 420,
+        "input_tokens": 1078445,
+        "index": 0,
+        "corpus": "climate",
+        "batch_id": "batch_6a7b0ce518c08190969893202b81f1c3",
+        "file_id": "file-7iENW4Hrg2rV3Tp8jWqn6n",
+        "status": "completed",
+        "submitted_at": "2026-08-11T13:52:05.196025",
+        "completed_count": 420,
+        "failed_count": 0,
+        "output_file_id": "file-ALB36qXEp2Ur29Eimo1JUj",
+        "usage": {
+          "input_tokens": 1079705,
+          "output_tokens": 560445
+        }
+      },
+      {
+        "line_start": 420,
+        "line_end": 826,
+        "n_requests": 406,
+        "input_tokens": 1079248,
+        "index": 1,
+        "corpus": "climate",
+        "batch_id": "batch_6a7b0dac120c819096e405dbf8ff9cb7",
+        "file_id": "file-Su7s3ZKyYLSNjknGnxiDnp",
+        "status": "completed",
+        "submitted_at": "2026-08-11T13:55:24.659664",
+        "completed_count": 406,
+        "failed_count": 0,
+        "output_file_id": "file-Vm4wDaKJ6NyC34b41Qe7C5",
+        "usage": {
+          "input_tokens": 1080466,
+          "output_tokens": 532881
+        }
+      },
+      {
+        "line_start": 826,
+        "line_end": 1254,
+        "n_requests": 428,
+        "input_tokens": 1077036,
+        "index": 2,
+        "corpus": "climate",
+        "batch_id": "batch_6a7b0f13fb6c8190a06e457c5bb97a50",
+        "file_id": "file-28eByV7DHVcKWfHPUu9vKc",
+        "status": "completed",
+        "submitted_at": "2026-08-11T14:01:24.113558",
+        "completed_count": 394,
+        "failed_count": 34,
+        "output_file_id": "file-C2SPf78RTRcdSPw17Ut4bF",
+        "usage": {
+          "input_tokens": 992765,
+          "output_tokens": 523764
+        },
+        "makeups": [
+          {
+            "batch_id": "batch_6a7b22478e4c8190af6f884b2fb2d1df",
+            "file_id": "file-MWJNtzwv7anqXRJhdP6kaQ",
+            "custom_ids": [
+              "climate-424-pass4",
+              "climate-430-pass4",
+              "climate-431-pass4",
+              "climate-438-pass3",
+              "climate-449-pass3",
+              "climate-468-pass1",
+              "climate-479-pass1",
+              "climate-479-pass4",
+              "climate-492-pass1",
+              "climate-492-pass4",
+              "climate-494-pass1",
+              "climate-502-pass3",
+              "climate-506-pass1",
+              "climate-506-pass3",
+              "climate-514-pass4",
+              "climate-521-pass4",
+              "climate-522-pass1",
+              "climate-528-pass3",
+              "climate-531-pass1",
+              "climate-563-pass3",
+              "climate-565-pass3",
+              "climate-565-pass4",
+              "climate-579-pass3",
+              "climate-586-pass3",
+              "climate-588-pass4",
+              "climate-590-pass3",
+              "climate-595-pass1",
+              "climate-600-pass1",
+              "climate-603-pass3",
+              "climate-618-pass3",
+              "climate-623-pass3",
+              "climate-630-pass1",
+              "climate-634-pass3",
+              "climate-636-pass4"
+            ],
+            "n_requests": 34,
+            "status": "completed",
+            "submitted_at": "2026-08-11T15:23:19.965738",
+            "completed_count": 34,
+            "failed_count": 0,
+            "output_file_id": "file-8bnnpBzXFrnSZgTwn9LwfE",
+            "usage": {
+              "input_tokens": 85555,
+              "output_tokens": 42324
+            }
+          }
+        ]
+      },
+      {
+        "line_start": 1254,
+        "line_end": 1663,
+        "n_requests": 409,
+        "input_tokens": 1077970,
+        "index": 3,
+        "corpus": "climate",
+        "batch_id": "batch_6a7b2c5174188190bbabb5e454081157",
+        "file_id": "file-9j4RutEV8rA4jeLeM8TYqN",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:06:09.881180",
+        "completed_count": 409,
+        "failed_count": 0,
+        "output_file_id": "file-K3KX5TPKbBEU2yd8XeVmUn",
+        "usage": {
+          "input_tokens": 1079197,
+          "output_tokens": 536683
+        }
+      },
+      {
+        "line_start": 1663,
+        "line_end": 2070,
+        "n_requests": 407,
+        "input_tokens": 1079368,
+        "index": 4,
+        "corpus": "climate",
+        "batch_id": "batch_6a7b2d4619f08190a3a75dd418ba11e8",
+        "file_id": "file-6tA5GAWuhhatd8tQiK7Ptb",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:10:14.252797",
+        "completed_count": 407,
+        "failed_count": 0,
+        "output_file_id": "file-CPKoVypqcqUFtvv7mZDmLB",
+        "usage": {
+          "input_tokens": 1080589,
+          "output_tokens": 538438
+        }
+      },
+      {
+        "line_start": 2070,
+        "line_end": 2496,
+        "n_requests": 426,
+        "input_tokens": 1079961,
+        "index": 5,
+        "corpus": "climate",
+        "batch_id": "batch_6a7b2ebab5508190b4ca07e823f618cd",
+        "file_id": "file-YDr5oWRZmhRdLchwT5fwgD",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:16:27.030560",
+        "completed_count": 426,
+        "failed_count": 0,
+        "output_file_id": "file-LfPtcFAVtHA67VytANdVTP",
+        "usage": {
+          "input_tokens": 1081239,
+          "output_tokens": 551832
+        }
+      },
+      {
+        "line_start": 2496,
+        "line_end": 2939,
+        "n_requests": 443,
+        "input_tokens": 1077901,
+        "index": 6,
+        "corpus": "climate",
+        "batch_id": "batch_6a7b302c5db081909b9aaa66e0d71f36",
+        "file_id": "file-JGrNhpXs1x4VMdXFug3YaJ",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:22:36.544693",
+        "completed_count": 443,
+        "failed_count": 0,
+        "output_file_id": "file-9WnoHhUjJ6JX5trraC83Jw",
+        "usage": {
+          "input_tokens": 1079230,
+          "output_tokens": 586976
+        }
+      },
+      {
+        "line_start": 2939,
+        "line_end": 3229,
+        "n_requests": 290,
+        "input_tokens": 754649,
+        "index": 7,
+        "corpus": "climate",
+        "batch_id": "batch_6a7b319dbd448190bf40fbb2b45fd4d9",
+        "file_id": "file-AUdm292JRX9AUApPNespQp",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:28:45.902402",
+        "completed_count": 290,
+        "failed_count": 0,
+        "output_file_id": "file-LURf9use4Q1ksVcJo5dmQR",
+        "usage": {
+          "input_tokens": 755519,
+          "output_tokens": 382422
+        }
+      }
+    ],
+    "migration": [
+      {
+        "line_start": 0,
+        "line_end": 521,
+        "n_requests": 521,
+        "input_tokens": 1079944,
+        "index": 0,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b329889f88190a12f3922e3a7cd31",
+        "file_id": "file-1p88rFBZv9Cf1xhaYqibca",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:32:56.710255",
+        "completed_count": 521,
+        "failed_count": 0,
+        "output_file_id": "file-8mLzPUtYc7Z1KBir4C1tKj",
+        "usage": {
+          "input_tokens": 1081507,
+          "output_tokens": 599114
+        }
+      },
+      {
+        "line_start": 521,
+        "line_end": 1044,
+        "n_requests": 523,
+        "input_tokens": 1079999,
+        "index": 1,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b33a8cfc081908f0b508878efc450",
+        "file_id": "file-NnasTAjc3uP6g1xEkLNvjg",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:37:29.330531",
+        "completed_count": 523,
+        "failed_count": 0,
+        "output_file_id": "file-RUUi4S8xg7gZRsi9e27KRe",
+        "usage": {
+          "input_tokens": 1081568,
+          "output_tokens": 612414
+        }
+      },
+      {
+        "line_start": 1044,
+        "line_end": 1541,
+        "n_requests": 497,
+        "input_tokens": 1079362,
+        "index": 2,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b34a82ec48190a6767642631db582",
+        "file_id": "file-L9A4neWn9V3fjez1pqcAfw",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:41:44.347914",
+        "completed_count": 497,
+        "failed_count": 0,
+        "output_file_id": "file-THZZjkHZ6TFGUwHCXuHiNC",
+        "usage": {
+          "input_tokens": 1080853,
+          "output_tokens": 583120
+        }
+      },
+      {
+        "line_start": 1541,
+        "line_end": 2028,
+        "n_requests": 487,
+        "input_tokens": 1078901,
+        "index": 3,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b35a4af3881908d2c5e0a32243d33",
+        "file_id": "file-3KuWzB5H6YmbVUaGpuq4f5",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:45:56.798509",
+        "completed_count": 487,
+        "failed_count": 0,
+        "output_file_id": "file-BeVcPZgTKGnLYCj3DGMFCD",
+        "usage": {
+          "input_tokens": 1080362,
+          "output_tokens": 543373
+        }
+      },
+      {
+        "line_start": 2028,
+        "line_end": 2524,
+        "n_requests": 496,
+        "input_tokens": 1078850,
+        "index": 4,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b36a0c7488190b46c040b4f42ca7c",
+        "file_id": "file-WXcmz8CqFbrYUJRTT7n4Qb",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:50:08.923705",
+        "completed_count": 496,
+        "failed_count": 0,
+        "output_file_id": "file-NCjqW1zS9in76BEnW3JgmQ",
+        "usage": {
+          "input_tokens": 1080338,
+          "output_tokens": 573194
+        }
+      },
+      {
+        "line_start": 2524,
+        "line_end": 3040,
+        "n_requests": 516,
+        "input_tokens": 1079243,
+        "index": 5,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b37a23464819090b698933f945f5e",
+        "file_id": "file-2PritP4wZqPTiyJQ3zL5Nz",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:54:26.366472",
+        "completed_count": 516,
+        "failed_count": 0,
+        "output_file_id": "file-KGtCivxfDkUmeSs7nxJWo4",
+        "usage": {
+          "input_tokens": 1080791,
+          "output_tokens": 589478
+        }
+      },
+      {
+        "line_start": 3040,
+        "line_end": 3551,
+        "n_requests": 511,
+        "input_tokens": 1079689,
+        "index": 6,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b38a215f4819081e0f2518b5e6b08",
+        "file_id": "file-RKT4SMTDiW9aH5zFqqhCub",
+        "status": "completed",
+        "submitted_at": "2026-08-11T16:58:42.521431",
+        "completed_count": 511,
+        "failed_count": 0,
+        "output_file_id": "file-F9dSDPA2RmJkqAehbnoht1",
+        "usage": {
+          "input_tokens": 1081222,
+          "output_tokens": 589306
+        }
+      },
+      {
+        "line_start": 3551,
+        "line_end": 3997,
+        "n_requests": 446,
+        "input_tokens": 1079511,
+        "index": 7,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b3a19adc88190b6bf57dca7b13edf",
+        "file_id": "file-UKYJmqAttB5byTNmwwQngK",
+        "status": "completed",
+        "submitted_at": "2026-08-11T17:04:57.784462",
+        "completed_count": 446,
+        "failed_count": 0,
+        "output_file_id": "file-Ffkqrbxuds7BWASSGZ7C5z",
+        "usage": {
+          "input_tokens": 1080849,
+          "output_tokens": 515147
+        }
+      },
+      {
+        "line_start": 3997,
+        "line_end": 4539,
+        "n_requests": 542,
+        "input_tokens": 1079974,
+        "index": 8,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b3b8d33e88190a045e228e114793b",
+        "file_id": "file-3k4ZFjWzMr47hcoHppc4VT",
+        "status": "completed",
+        "submitted_at": "2026-08-11T17:11:09.302102",
+        "completed_count": 542,
+        "failed_count": 0,
+        "output_file_id": "file-SJhfzMC9YYZEfHmLFtkenE",
+        "usage": {
+          "input_tokens": 1081600,
+          "output_tokens": 606840
+        }
+      },
+      {
+        "line_start": 4539,
+        "line_end": 5090,
+        "n_requests": 551,
+        "input_tokens": 1076003,
+        "index": 9,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b3c82373481908a3315c920f98ec3",
+        "file_id": "file-FKcjjiJApSfczq5GC81oVx",
+        "status": "completed",
+        "submitted_at": "2026-08-11T17:15:14.344512",
+        "completed_count": 551,
+        "failed_count": 0,
+        "output_file_id": "file-4a4sLbauZeAAYMJTu1CNop",
+        "usage": {
+          "input_tokens": 1077656,
+          "output_tokens": 613139
+        }
+      },
+      {
+        "line_start": 5090,
+        "line_end": 5582,
+        "n_requests": 492,
+        "input_tokens": 1077195,
+        "index": 10,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b3d7ede7c8190891b3f306dab6a5d",
+        "file_id": "file-JcDj1MakC7LQnavp9tVtv3",
+        "status": "completed",
+        "submitted_at": "2026-08-11T17:19:26.983326",
+        "completed_count": 492,
+        "failed_count": 0,
+        "output_file_id": "file-WCo9tJhPbBpb4ZQ96Z37Dd",
+        "usage": {
+          "input_tokens": 1078671,
+          "output_tokens": 559068
+        }
+      },
+      {
+        "line_start": 5582,
+        "line_end": 6070,
+        "n_requests": 488,
+        "input_tokens": 1079350,
+        "index": 11,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b3e7dc3648190997cddc89c3fdffa",
+        "file_id": "file-Nknc51NvLrYF3W4BSgj7RZ",
+        "status": "completed",
+        "submitted_at": "2026-08-11T17:23:41.868438",
+        "completed_count": 488,
+        "failed_count": 0,
+        "output_file_id": "file-AirRuxYgFdajVe81heWCap",
+        "usage": {
+          "input_tokens": 1080814,
+          "output_tokens": 568004
+        }
+      },
+      {
+        "line_start": 6070,
+        "line_end": 6598,
+        "n_requests": 528,
+        "input_tokens": 1079634,
+        "index": 12,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b3f7245a08190899ba0421709c0a2",
+        "file_id": "file-WkHNmB42tjzFQo8aWoYi3Z",
+        "status": "completed",
+        "submitted_at": "2026-08-11T17:27:46.384222",
+        "completed_count": 528,
+        "failed_count": 0,
+        "output_file_id": "file-BtUaQwR9FhWinKXxnXVjmS",
+        "usage": {
+          "input_tokens": 1081218,
+          "output_tokens": 611080
+        }
+      },
+      {
+        "line_start": 6598,
+        "line_end": 7101,
+        "n_requests": 503,
+        "input_tokens": 1079089,
+        "index": 13,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b695462cc8190ac84e21eb7c1ef5c",
+        "file_id": "file-6S3iNzC1hQsSNJaequvcSV",
+        "status": "completed",
+        "submitted_at": "2026-08-11T20:26:28.934929",
+        "completed_count": 503,
+        "failed_count": 0,
+        "output_file_id": "file-VjRD4f5xSPJHH8X6vGa1Ey",
+        "usage": {
+          "input_tokens": 1080598,
+          "output_tokens": 584076
+        }
+      },
+      {
+        "line_start": 7101,
+        "line_end": 7621,
+        "n_requests": 520,
+        "input_tokens": 1077239,
+        "index": 14,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b6b49ff408190953ff912c75a939c",
+        "file_id": "file-3XQiWtBxdpKYaMeYF7uqfc",
+        "status": "completed",
+        "submitted_at": "2026-08-11T20:34:50.478934",
+        "completed_count": 520,
+        "failed_count": 0,
+        "output_file_id": "file-FMY8gCsgXJuPixPX5GKkgt",
+        "usage": {
+          "input_tokens": 1078799,
+          "output_tokens": 583962
+        }
+      },
+      {
+        "line_start": 7621,
+        "line_end": 8162,
+        "n_requests": 541,
+        "input_tokens": 1079168,
+        "index": 15,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b6d3aad1c8190abd48ceeca2f820d",
+        "file_id": "file-CY3CBpZitwKTfX5EE45TnB",
+        "status": "completed",
+        "submitted_at": "2026-08-11T20:43:06.815296",
+        "completed_count": 541,
+        "failed_count": 0,
+        "output_file_id": "file-XKaGQbSTtoUCyhhcq4EcLq",
+        "usage": {
+          "input_tokens": 1080791,
+          "output_tokens": 597394
+        }
+      },
+      {
+        "line_start": 8162,
+        "line_end": 8633,
+        "n_requests": 471,
+        "input_tokens": 1079653,
+        "index": 16,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b6f2c94c88190b4734711189ff29d",
+        "file_id": "file-NqJQCGvAPPqXzgnLAty3Z5",
+        "status": "completed",
+        "submitted_at": "2026-08-11T20:51:24.711821",
+        "completed_count": 471,
+        "failed_count": 0,
+        "output_file_id": "file-CG1hcy9Es6A9tEv3Pm5KhF",
+        "usage": {
+          "input_tokens": 1081066,
+          "output_tokens": 530507
+        }
+      },
+      {
+        "line_start": 8633,
+        "line_end": 8943,
+        "n_requests": 310,
+        "input_tokens": 786399,
+        "index": 17,
+        "corpus": "migration",
+        "batch_id": "batch_6a7b70a384708190815f8206f6d47db9",
+        "file_id": "file-DJ1MYjk8CSdTqzr1vhMjmQ",
+        "status": "completed",
+        "submitted_at": "2026-08-11T20:57:39.962003",
+        "completed_count": 310,
+        "failed_count": 0,
+        "output_file_id": "file-SNjXkZ3Lt5zRZNu1cBveUf",
+        "usage": {
+          "input_tokens": 787329,
+          "output_tokens": 351525
+        }
+      }
+    ]
+  }
+}

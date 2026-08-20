@@ -1,0 +1,161 @@
+corpus,year,frame,frame_label,pct,n_present,n_applicable
+climate,2014,agency,Agency,100.0,27,27
+climate,2015,agency,Agency,97.619,41,42
+climate,2016,agency,Agency,92.3077,24,26
+climate,2017,agency,Agency,100.0,47,47
+climate,2018,agency,Agency,98.2759,57,58
+climate,2019,agency,Agency,98.0,98,100
+climate,2020,agency,Agency,100.0,107,107
+climate,2021,agency,Agency,99.1489,233,235
+climate,2022,agency,Agency,96.5686,197,204
+climate,2023,agency,Agency,98.6547,220,223
+migration,2014,agency,Agency,100.0,90,90
+migration,2015,agency,Agency,98.4496,254,258
+migration,2016,agency,Agency,97.8903,232,237
+migration,2017,agency,Agency,97.9452,143,146
+migration,2018,agency,Agency,97.6331,165,169
+migration,2019,agency,Agency,98.1308,210,214
+migration,2020,agency,Agency,100.0,293,293
+migration,2021,agency,Agency,98.9324,278,281
+migration,2022,agency,Agency,99.361,622,626
+migration,2023,agency,Agency,96.5361,641,664
+climate,2014,conflict,Conflict,77.7778,21,27
+climate,2015,conflict,Conflict,69.0476,29,42
+climate,2016,conflict,Conflict,76.9231,20,26
+climate,2017,conflict,Conflict,76.5957,36,47
+climate,2018,conflict,Conflict,82.7586,48,58
+climate,2019,conflict,Conflict,76.0,76,100
+climate,2020,conflict,Conflict,68.2243,73,107
+climate,2021,conflict,Conflict,68.0851,160,235
+climate,2022,conflict,Conflict,70.5882,144,204
+climate,2023,conflict,Conflict,71.7489,160,223
+migration,2014,conflict,Conflict,85.5556,77,90
+migration,2015,conflict,Conflict,84.4961,218,258
+migration,2016,conflict,Conflict,81.8565,194,237
+migration,2017,conflict,Conflict,89.726,131,146
+migration,2018,conflict,Conflict,88.1657,149,169
+migration,2019,conflict,Conflict,83.6449,179,214
+migration,2020,conflict,Conflict,81.57,239,293
+migration,2021,conflict,Conflict,80.7829,227,281
+migration,2022,conflict,Conflict,67.8914,425,626
+migration,2023,conflict,Conflict,76.0542,505,664
+climate,2014,deservingness,Deservingness,11.1111,3,27
+climate,2015,deservingness,Deservingness,14.2857,6,42
+climate,2016,deservingness,Deservingness,3.8462,1,26
+climate,2017,deservingness,Deservingness,2.1277,1,47
+climate,2018,deservingness,Deservingness,17.2414,10,58
+climate,2019,deservingness,Deservingness,12.0,12,100
+climate,2020,deservingness,Deservingness,7.4766,8,107
+climate,2021,deservingness,Deservingness,7.234,17,235
+climate,2022,deservingness,Deservingness,16.1765,33,204
+climate,2023,deservingness,Deservingness,14.3498,32,223
+migration,2014,deservingness,Deservingness,58.8889,53,90
+migration,2015,deservingness,Deservingness,54.2636,140,258
+migration,2016,deservingness,Deservingness,53.5865,127,237
+migration,2017,deservingness,Deservingness,65.7534,96,146
+migration,2018,deservingness,Deservingness,56.213,95,169
+migration,2019,deservingness,Deservingness,50.9346,109,214
+migration,2020,deservingness,Deservingness,56.6553,166,293
+migration,2021,deservingness,Deservingness,59.7865,168,281
+migration,2022,deservingness,Deservingness,57.8275,362,626
+migration,2023,deservingness,Deservingness,41.8675,278,664
+climate,2014,economic,Economic,77.7778,21,27
+climate,2015,economic,Economic,69.0476,29,42
+climate,2016,economic,Economic,53.8462,14,26
+climate,2017,economic,Economic,61.7021,29,47
+climate,2018,economic,Economic,74.1379,43,58
+climate,2019,economic,Economic,59.0,59,100
+climate,2020,economic,Economic,59.8131,64,107
+climate,2021,economic,Economic,62.1277,146,235
+climate,2022,economic,Economic,61.7647,126,204
+climate,2023,economic,Economic,57.3991,128,223
+migration,2014,economic,Economic,41.1111,37,90
+migration,2015,economic,Economic,37.5969,97,258
+migration,2016,economic,Economic,36.2869,86,237
+migration,2017,economic,Economic,39.726,58,146
+migration,2018,economic,Economic,36.6864,62,169
+migration,2019,economic,Economic,34.5794,74,214
+migration,2020,economic,Economic,32.4232,95,293
+migration,2021,economic,Economic,27.4021,77,281
+migration,2022,economic,Economic,33.0671,207,626
+migration,2023,economic,Economic,30.1205,200,664
+climate,2014,human_interest,Human Interest,14.8148,4,27
+climate,2015,human_interest,Human Interest,16.6667,7,42
+climate,2016,human_interest,Human Interest,15.3846,4,26
+climate,2017,human_interest,Human Interest,31.9149,15,47
+climate,2018,human_interest,Human Interest,29.3103,17,58
+climate,2019,human_interest,Human Interest,41.0,41,100
+climate,2020,human_interest,Human Interest,33.6449,36,107
+climate,2021,human_interest,Human Interest,34.4681,81,235
+climate,2022,human_interest,Human Interest,36.7647,75,204
+climate,2023,human_interest,Human Interest,40.8072,91,223
+migration,2014,human_interest,Human Interest,40.0,36,90
+migration,2015,human_interest,Human Interest,39.9225,103,258
+migration,2016,human_interest,Human Interest,37.1308,88,237
+migration,2017,human_interest,Human Interest,43.1507,63,146
+migration,2018,human_interest,Human Interest,46.1538,78,169
+migration,2019,human_interest,Human Interest,46.2617,99,214
+migration,2020,human_interest,Human Interest,50.8532,149,293
+migration,2021,human_interest,Human Interest,51.6014,145,281
+migration,2022,human_interest,Human Interest,53.8339,337,626
+migration,2023,human_interest,Human Interest,31.1747,207,664
+climate,2014,othering,Othering,14.8148,4,27
+climate,2015,othering,Othering,11.9048,5,42
+climate,2016,othering,Othering,3.8462,1,26
+climate,2017,othering,Othering,4.2553,2,47
+climate,2018,othering,Othering,6.8966,4,58
+climate,2019,othering,Othering,13.0,13,100
+climate,2020,othering,Othering,1.8692,2,107
+climate,2021,othering,Othering,9.7872,23,235
+climate,2022,othering,Othering,13.2353,27,204
+climate,2023,othering,Othering,13.0045,29,223
+migration,2014,othering,Othering,68.8889,62,90
+migration,2015,othering,Othering,58.5271,151,258
+migration,2016,othering,Othering,61.6034,146,237
+migration,2017,othering,Othering,71.9178,105,146
+migration,2018,othering,Othering,74.5562,126,169
+migration,2019,othering,Othering,61.215,131,214
+migration,2020,othering,Othering,53.9249,158,293
+migration,2021,othering,Othering,48.0427,135,281
+migration,2022,othering,Othering,42.492,266,626
+migration,2023,othering,Othering,49.247,327,664
+climate,2014,responsibility,Responsibility,81.4815,22,27
+climate,2015,responsibility,Responsibility,92.8571,39,42
+climate,2016,responsibility,Responsibility,84.6154,22,26
+climate,2017,responsibility,Responsibility,82.9787,39,47
+climate,2018,responsibility,Responsibility,84.4828,49,58
+climate,2019,responsibility,Responsibility,91.0,91,100
+climate,2020,responsibility,Responsibility,91.5888,98,107
+climate,2021,responsibility,Responsibility,89.3617,210,235
+climate,2022,responsibility,Responsibility,89.2157,182,204
+climate,2023,responsibility,Responsibility,91.0314,203,223
+migration,2014,responsibility,Responsibility,76.6667,69,90
+migration,2015,responsibility,Responsibility,82.9457,214,258
+migration,2016,responsibility,Responsibility,84.3882,200,237
+migration,2017,responsibility,Responsibility,78.7671,115,146
+migration,2018,responsibility,Responsibility,79.2899,134,169
+migration,2019,responsibility,Responsibility,80.8411,173,214
+migration,2020,responsibility,Responsibility,85.3242,250,293
+migration,2021,responsibility,Responsibility,85.7651,241,281
+migration,2022,responsibility,Responsibility,80.8307,506,626
+migration,2023,responsibility,Responsibility,79.8193,530,664
+climate,2014,securitization,Securitization,40.7407,11,27
+climate,2015,securitization,Securitization,52.381,22,42
+climate,2016,securitization,Securitization,50.0,13,26
+climate,2017,securitization,Securitization,48.9362,23,47
+climate,2018,securitization,Securitization,56.8966,33,58
+climate,2019,securitization,Securitization,47.0,47,100
+climate,2020,securitization,Securitization,45.7944,49,107
+climate,2021,securitization,Securitization,49.7872,117,235
+climate,2022,securitization,Securitization,44.6078,91,204
+climate,2023,securitization,Securitization,43.9462,98,223
+migration,2014,securitization,Securitization,17.7778,16,90
+migration,2015,securitization,Securitization,33.3333,86,258
+migration,2016,securitization,Securitization,25.7384,61,237
+migration,2017,securitization,Securitization,23.2877,34,146
+migration,2018,securitization,Securitization,21.8935,37,169
+migration,2019,securitization,Securitization,22.4299,48,214
+migration,2020,securitization,Securitization,17.0648,50,293
+migration,2021,securitization,Securitization,27.758,78,281
+migration,2022,securitization,Securitization,19.4888,122,626
+migration,2023,securitization,Securitization,13.1024,87,664

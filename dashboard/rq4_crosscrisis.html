@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RQ4 — Cross-crisis frame comparison</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<style>
+  :root { --bg:#ffffff; --fg:#16181d; --muted:#5c6370; --line:#e3e6ea; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14161a; --fg:#e8eaed; --muted:#9aa2ad; --line:#2a2e35; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:28px 24px 56px; background:var(--bg); color:var(--fg);
+         font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .wrap { max-width:1280px; margin:0 auto; }
+  h1 { font-size:23px; margin:0 0 4px; letter-spacing:-0.01em; }
+  .sub { color:var(--muted); font-size:14px; margin:0 0 20px; }
+  .panel { border:1px solid var(--line); border-radius:10px; padding:14px 16px 6px; }
+  .chart-scroll { overflow-x:auto; }
+  .chart { min-width:960px; }
+  .caption { font-size:13px; color:var(--muted); border-top:1px solid var(--line);
+             margin-top:6px; padding:11px 2px 8px; }
+  .caption p { margin:0 0 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>RQ4 &middot; Cross-crisis frame comparison</h1>
+  <p class="sub">The eight frames coded identically in both corpora, climate
+     against migration. Click a legend entry to hide or show a corpus.</p>
+
+  <div class="panel">
+    <div class="chart-scroll"><div id="chart" class="chart"></div></div>
+  </div>
+</div>
+
+<script>
+const DATA = {"years": [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023], "blocks": [{"title": "Generic frames", "note": "coded identically across both corpora", "frames": ["conflict", "human_interest", "economic", "deservingness", "responsibility"]}, {"title": "Cross-crisis frames", "note": "designed to test securitization parallels between migration and climate", "frames": ["securitization", "othering", "agency"]}], "frame_labels": {"conflict": "Conflict", "human_interest": "Human Interest", "economic": "Economic", "deservingness": "Deservingness", "responsibility": "Responsibility", "securitization": "Securitization", "othering": "Othering", "agency": "Agency"}, "colors": {"climate": "#4269d0", "migration": "#ef7d18"}, "series": {"conflict": {"climate": {"pct": [77.7778, 69.0476, 76.9231, 76.5957, 82.7586, 76.0, 68.2243, 68.0851, 70.5882, 71.7489], "np": [21, 29, 20, 36, 48, 76, 73, 160, 144, 160], "na": [27, 42, 26, 47, 58, 100, 107, 235, 204, 223]}, "migration": {"pct": [85.5556, 84.4961, 81.8565, 89.726, 88.1657, 83.6449, 81.57, 80.7829, 67.8914, 76.0542], "np": [77, 218, 194, 131, 149, 179, 239, 227, 425, 505], "na": [90, 258, 237, 146, 169, 214, 293, 281, 626, 664]}}, "human_interest": {"climate": {"pct": [14.8148, 16.6667, 15.3846, 31.9149, 29.3103, 41.0, 33.6449, 34.4681, 36.7647, 40.8072], "np": [4, 7, 4, 15, 17, 41, 36, 81, 75, 91], "na": [27, 42, 26, 47, 58, 100, 107, 235, 204, 223]}, "migration": {"pct": [40.0, 39.9225, 37.1308, 43.1507, 46.1538, 46.2617, 50.8532, 51.6014, 53.8339, 31.1747], "np": [36, 103, 88, 63, 78, 99, 149, 145, 337, 207], "na": [90, 258, 237, 146, 169, 214, 293, 281, 626, 664]}}, "economic": {"climate": {"pct": [77.7778, 69.0476, 53.8462, 61.7021, 74.1379, 59.0, 59.8131, 62.1277, 61.7647, 57.3991], "np": [21, 29, 14, 29, 43, 59, 64, 146, 126, 128], "na": [27, 42, 26, 47, 58, 100, 107, 235, 204, 223]}, "migration": {"pct": [41.1111, 37.5969, 36.2869, 39.726, 36.6864, 34.5794, 32.4232, 27.4021, 33.0671, 30.1205], "np": [37, 97, 86, 58, 62, 74, 95, 77, 207, 200], "na": [90, 258, 237, 146, 169, 214, 293, 281, 626, 664]}}, "deservingness": {"climate": {"pct": [11.1111, 14.2857, 3.8462, 2.1277, 17.2414, 12.0, 7.4766, 7.234, 16.1765, 14.3498], "np": [3, 6, 1, 1, 10, 12, 8, 17, 33, 32], "na": [27, 42, 26, 47, 58, 100, 107, 235, 204, 223]}, "migration": {"pct": [58.8889, 54.2636, 53.5865, 65.7534, 56.213, 50.9346, 56.6553, 59.7865, 57.8275, 41.8675], "np": [53, 140, 127, 96, 95, 109, 166, 168, 362, 278], "na": [90, 258, 237, 146, 169, 214, 293, 281, 626, 664]}}, "responsibility": {"climate": {"pct": [81.4815, 92.8571, 84.6154, 82.9787, 84.4828, 91.0, 91.5888, 89.3617, 89.2157, 91.0314], "np": [22, 39, 22, 39, 49, 91, 98, 210, 182, 203], "na": [27, 42, 26, 47, 58, 100, 107, 235, 204, 223]}, "migration": {"pct": [76.6667, 82.9457, 84.3882, 78.7671, 79.2899, 80.8411, 85.3242, 85.7651, 80.8307, 79.8193], "np": [69, 214, 200, 115, 134, 173, 250, 241, 506, 530], "na": [90, 258, 237, 146, 169, 214, 293, 281, 626, 664]}}, "securitization": {"climate": {"pct": [40.7407, 52.381, 50.0, 48.9362, 56.8966, 47.0, 45.7944, 49.7872, 44.6078, 43.9462], "np": [11, 22, 13, 23, 33, 47, 49, 117, 91, 98], "na": [27, 42, 26, 47, 58, 100, 107, 235, 204, 223]}, "migration": {"pct": [17.7778, 33.3333, 25.7384, 23.2877, 21.8935, 22.4299, 17.0648, 27.758, 19.4888, 13.1024], "np": [16, 86, 61, 34, 37, 48, 50, 78, 122, 87], "na": [90, 258, 237, 146, 169, 214, 293, 281, 626, 664]}}, "othering": {"climate": {"pct": [14.8148, 11.9048, 3.8462, 4.2553, 6.8966, 13.0, 1.8692, 9.7872, 13.2353, 13.0045], "np": [4, 5, 1, 2, 4, 13, 2, 23, 27, 29], "na": [27, 42, 26, 47, 58, 100, 107, 235, 204, 223]}, "migration": {"pct": [68.8889, 58.5271, 61.6034, 71.9178, 74.5562, 61.215, 53.9249, 48.0427, 42.492, 49.247], "np": [62, 151, 146, 105, 126, 131, 158, 135, 266, 327], "na": [90, 258, 237, 146, 169, 214, 293, 281, 626, 664]}}, "agency": {"climate": {"pct": [100.0, 97.619, 92.3077, 100.0, 98.2759, 98.0, 100.0, 99.1489, 96.5686, 98.6547], "np": [27, 41, 24, 47, 57, 98, 107, 233, 197, 220], "na": [27, 42, 26, 47, 58, 100, 107, 235, 204, 223]}, "migration": {"pct": [100.0, 98.4496, 97.8903, 97.9452, 97.6331, 98.1308, 100.0, 98.9324, 99.361, 96.5361], "np": [90, 254, 232, 143, 165, 210, 293, 278, 622, 641], "na": [90, 258, 237, 146, 169, 214, 293, 281, 626, 664]}}}};
+
+const NCOL = 4, XGAP = 0.06;
+const COLW = (1 - XGAP * (NCOL - 1)) / NCOL;
+const ROWS = [[0.60, 1.00], [0.00, 0.40]];
+
+// flat frame order with its block index; grid position is derived from this
+const FLAT = [];
+DATA.blocks.forEach((b, bi) => b.frames.forEach(f => FLAT.push({ slug: f, block: bi })));
+
+// consecutive same-block subplots within a row, so a heading can span exactly
+// the subplots it describes rather than assuming one block per row
+function runsFor(row) {
+  const out = [];
+  for (let c = 0; c < NCOL; c++) {
+    const i = row * NCOL + c;
+    if (i >= FLAT.length) break;
+    const b = FLAT[i].block;
+    if (out.length && out[out.length - 1].block === b) out[out.length - 1].end = c;
+    else out.push({ block: b, start: c, end: c });
+  }
+  return out;
+}
+
+function render() {
+  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const fg = dark ? '#e8eaed' : '#16181d';
+  const muted = dark ? '#9aa2ad' : '#5c6370';
+  const grid = dark ? '#2a2e35' : '#e3e6ea';
+  const paper = dark ? '#14161a' : '#ffffff';
+  const GREY = dark ? '#8b9098' : '#999999';
+
+  const traces = [];
+  const layout = {
+    height: 640,
+    // top margin must clear the first block heading, which sits above the
+    // row-1 plotting area at paper y = 1.075
+    margin: { l: 52, r: 150, t: 78, b: 40 },
+    paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
+    font: { color: fg, size: 11.5 },
+    hovermode: 'x unified',
+    hoverlabel: { bgcolor: dark ? '#20242b' : '#ffffff', bordercolor: grid,
+                  font: { size: 11.5, color: fg } },
+    legend: { orientation: 'v', x: 1.008, xanchor: 'left', y: 0.99,
+              font: { size: 12, color: fg } },
+    annotations: [], shapes: []
+  };
+
+  // One shared legend for the whole grid: two proxy traces own it, every real
+  // trace is showlegend:false in the matching legendgroup. Also keeps per-point
+  // marker arrays from ever reaching the legend icon.
+  ['climate', 'migration'].forEach(c => {
+    traces.push({
+      type: 'scatter', mode: 'lines+markers',
+      name: c.charAt(0).toUpperCase() + c.slice(1),
+      legendgroup: c, showlegend: true, hoverinfo: 'skip',
+      x: [null], y: [null],
+      line: { color: DATA.colors[c], width: 2 },
+      marker: { size: 10, symbol: 'circle', color: DATA.colors[c],
+                line: { color: DATA.colors[c], width: 2 } },
+      xaxis: 'x', yaxis: 'y'
+    });
+  });
+
+  const seen = {};
+  ROWS.forEach((rng, row) => {
+    const [y0, y1] = rng;
+
+    // one heading + rule per run of same-block subplots in this row
+    runsFor(row).forEach(run => {
+      const b = DATA.blocks[run.block];
+      const xa0 = run.start * (COLW + XGAP);
+      const xa1 = run.end * (COLW + XGAP) + COLW;
+      const first = !seen[run.block];
+      seen[run.block] = true;
+      layout.annotations.push({
+        text: '<b>' + b.title + '</b>' + (first ? ' \u2014 ' + b.note : ' (cont.)'),
+        xref: 'paper', yref: 'paper', x: xa0, y: y1 + 0.075,
+        xanchor: 'left', yanchor: 'bottom', showarrow: false,
+        font: { size: 12.5, color: muted }
+      });
+      layout.shapes.push({
+        type: 'line', xref: 'paper', yref: 'paper',
+        x0: xa0, x1: xa1, y0: y1 + 0.062, y1: y1 + 0.062,
+        line: { color: grid, width: 1 }
+      });
+      // vertical divider where one block ends mid-row
+      if (run.start > 0) {
+        layout.shapes.push({
+          type: 'line', xref: 'paper', yref: 'paper',
+          x0: xa0 - XGAP / 2, x1: xa0 - XGAP / 2,
+          y0: y0, y1: y1 + 0.062,
+          line: { color: grid, width: 1 }
+        });
+      }
+    });
+
+    for (let ci = 0; ci < NCOL; ci++) {
+      const flatIdx = row * NCOL + ci;
+      if (flatIdx >= FLAT.length) break;
+      const slug = FLAT[flatIdx].slug;
+      const ax = flatIdx + 1;
+      const xa = 'x' + (ax === 1 ? '' : ax), ya = 'y' + (ax === 1 ? '' : ax);
+      const x0 = ci * (COLW + XGAP);
+
+      layout['xaxis' + (ax === 1 ? '' : ax)] = {
+        domain: [x0, x0 + COLW], anchor: ya.replace('y', 'y'),
+        tick0: 2015, dtick: 4, tickfont: { size: 10, color: muted },
+        gridcolor: grid, zeroline: false, range: [2013.4, 2023.6]
+      };
+      layout['yaxis' + (ax === 1 ? '' : ax)] = {
+        domain: [y0, y1], anchor: xa,
+        range: [-4, 104], tick0: 0, dtick: 25,
+        showticklabels: ci === 0, ticksuffix: '%',
+        tickfont: { size: 10, color: muted },
+        gridcolor: grid, zeroline: false
+      };
+      layout.annotations.push({
+        text: DATA.frame_labels[slug],
+        xref: 'paper', yref: 'paper',
+        x: x0 + COLW / 2, y: y1 + 0.012,
+        xanchor: 'center', yanchor: 'bottom', showarrow: false,
+        font: { size: 12, color: fg }
+      });
+
+      ['climate', 'migration'].forEach(c => {
+        const s = DATA.series[slug][c];
+        const colour = DATA.colors[c];
+        traces.push({
+          type: 'scatter', mode: 'lines+markers',
+          name: c.charAt(0).toUpperCase() + c.slice(1),
+          legendgroup: c, showlegend: false,
+          x: DATA.years, y: s.pct, xaxis: xa, yaxis: ya,
+          customdata: s.na.map((n, j) => [
+            s.np[j], n,
+            (n > 0 && n <= 2) ? '  \u00b7  n=' + n + ', not meaningful' : ''
+          ]),
+          line: { color: colour, width: 2 },
+          marker: {
+            size:   s.na.map(n => n <= 2 ? 8 : (n < 10 ? 5 : 8)),
+            symbol: s.na.map(n => n <= 2 ? 'diamond-open' : 'circle'),
+            color:  s.na.map(n => n <= 2 ? GREY : (n < 10 ? paper : colour)),
+            line: { color: s.na.map(n => n <= 2 ? GREY : colour),
+                    width: s.na.map(n => n <= 2 ? 1.8 : (n < 10 ? 1.5 : 1.5)) }
+          },
+          connectgaps: false,
+          hovertemplate:
+            '%{y:.1f}%  \u00b7  %{customdata[0]}/%{customdata[1]} articles' +
+            '%{customdata[2]}'
+        });
+      });
+    }
+  });
+
+  Plotly.react('chart', traces, layout, { displayModeBar: false, responsive: true });
+}
+
+render();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+</script>
+</body>
+</html>

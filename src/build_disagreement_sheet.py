@@ -168,7 +168,7 @@ def load_human() -> pd.DataFrame:
     df = pd.DataFrame(rows[1:], columns=list(rows[0]))
     for col in df.columns:
         df[col] = df[col].map(lambda v: None if v is None else str(v).strip())
-    df["benchmark_idx"] = df["benchmark_idx"].astype(float).astype(int)
+    df["benchmark_idx"] = df["benchmark_idx"].astype(float).round().astype(int)
     return df
 
 

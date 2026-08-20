@@ -1,0 +1,266 @@
+{
+  "conflict": {
+    "pass": "pass1",
+    "applies_to": [
+      "climate",
+      "migration",
+      "intersection"
+    ],
+    "present_col": "conflict_present",
+    "indicators_col": "conflict_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "conflict_present",
+      "conflict_indicators"
+    ]
+  },
+  "human_interest": {
+    "pass": "pass1",
+    "applies_to": [
+      "climate",
+      "migration",
+      "intersection"
+    ],
+    "present_col": "human_interest_present",
+    "indicators_col": "human_interest_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "human_interest_present",
+      "human_interest_indicators"
+    ]
+  },
+  "economic": {
+    "pass": "pass1",
+    "applies_to": [
+      "climate",
+      "migration",
+      "intersection"
+    ],
+    "present_col": "economic_present",
+    "indicators_col": "economic_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "economic_present",
+      "economic_indicators"
+    ]
+  },
+  "deservingness": {
+    "pass": "pass1",
+    "applies_to": [
+      "climate",
+      "migration",
+      "intersection"
+    ],
+    "present_col": "deservingness_present",
+    "indicators_col": "deservingness_indicators",
+    "extra_cols": [
+      "deservingness_direction"
+    ],
+    "model_stated_col": null,
+    "all_cols": [
+      "deservingness_present",
+      "deservingness_indicators",
+      "deservingness_direction"
+    ]
+  },
+  "responsibility": {
+    "pass": "pass1",
+    "applies_to": [
+      "climate",
+      "migration",
+      "intersection"
+    ],
+    "present_col": "responsibility_present",
+    "indicators_col": "responsibility_indicators",
+    "extra_cols": [
+      "responsibility_responsible_actor"
+    ],
+    "model_stated_col": null,
+    "all_cols": [
+      "responsibility_present",
+      "responsibility_indicators",
+      "responsibility_responsible_actor"
+    ]
+  },
+  "humanitarian": {
+    "pass": "pass2",
+    "applies_to": [
+      "migration",
+      "intersection"
+    ],
+    "present_col": "humanitarian_present",
+    "indicators_col": "humanitarian_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "humanitarian_present",
+      "humanitarian_indicators"
+    ]
+  },
+  "security": {
+    "pass": "pass2",
+    "applies_to": [
+      "migration",
+      "intersection"
+    ],
+    "present_col": "security_present",
+    "indicators_col": "security_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "security_present",
+      "security_indicators"
+    ]
+  },
+  "policy": {
+    "pass": "pass2",
+    "applies_to": [
+      "migration",
+      "intersection"
+    ],
+    "present_col": "policy_present",
+    "indicators_col": "policy_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "policy_present",
+      "policy_indicators"
+    ]
+  },
+  "scientific": {
+    "pass": "pass3",
+    "applies_to": [
+      "climate",
+      "intersection"
+    ],
+    "present_col": "scientific_present",
+    "indicators_col": "scientific_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "scientific_present",
+      "scientific_indicators"
+    ]
+  },
+  "crisis": {
+    "pass": "pass3",
+    "applies_to": [
+      "climate",
+      "intersection"
+    ],
+    "present_col": "crisis_present",
+    "indicators_col": "crisis_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "crisis_present",
+      "crisis_indicators"
+    ]
+  },
+  "solutions": {
+    "pass": "pass3",
+    "applies_to": [
+      "climate",
+      "intersection"
+    ],
+    "present_col": "solutions_present",
+    "indicators_col": "solutions_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "solutions_present",
+      "solutions_indicators"
+    ]
+  },
+  "victim": {
+    "pass": "pass3",
+    "applies_to": [
+      "climate",
+      "intersection"
+    ],
+    "present_col": "victim_present",
+    "indicators_col": "victim_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "victim_present",
+      "victim_indicators"
+    ]
+  },
+  "skepticism": {
+    "pass": "pass3",
+    "applies_to": [
+      "climate",
+      "intersection"
+    ],
+    "present_col": "skepticism_present",
+    "indicators_col": "skepticism_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "skepticism_present",
+      "skepticism_indicators"
+    ]
+  },
+  "securitization": {
+    "pass": "pass4",
+    "applies_to": [
+      "climate",
+      "migration",
+      "intersection"
+    ],
+    "present_col": "securitization_present",
+    "indicators_col": "securitization_indicators",
+    "extra_cols": [],
+    "model_stated_col": null,
+    "all_cols": [
+      "securitization_present",
+      "securitization_indicators"
+    ]
+  },
+  "othering": {
+    "pass": "pass4",
+    "applies_to": [
+      "climate",
+      "migration",
+      "intersection"
+    ],
+    "present_col": "othering_present",
+    "indicators_col": "othering_indicators",
+    "extra_cols": [
+      "othering_othering_type",
+      "othering_othering_evidence"
+    ],
+    "model_stated_col": "othering_present_model_stated",
+    "all_cols": [
+      "othering_present",
+      "othering_indicators",
+      "othering_othering_type",
+      "othering_othering_evidence",
+      "othering_present_model_stated"
+    ]
+  },
+  "agency": {
+    "pass": "pass4",
+    "applies_to": [
+      "climate",
+      "migration",
+      "intersection"
+    ],
+    "present_col": "agency_present",
+    "indicators_col": "agency_indicators",
+    "extra_cols": [
+      "agency_agency_type"
+    ],
+    "model_stated_col": "agency_present_model_stated",
+    "all_cols": [
+      "agency_present",
+      "agency_indicators",
+      "agency_agency_type",
+      "agency_present_model_stated"
+    ]
+  }
+}

@@ -1,0 +1,521 @@
+corpus,meta,frame,frame_label,n_present,n_applicable,pct,alpha,tier
+climate,Climate Politics & Policies,conflict,Conflict,189,216,87.5,0.504,structural
+climate,Climate Politics & Policies,human_interest,Human Interest,81,216,37.5,0.665,clears
+climate,Climate Politics & Policies,economic,Economic,116,216,53.7037,0.719,clears
+climate,Climate Politics & Policies,deservingness,Deservingness,37,216,17.1296,0.687,clears
+climate,Climate Politics & Policies,responsibility,Responsibility,198,216,91.6667,0.318,structural
+climate,Climate Politics & Policies,scientific,Scientific,95,216,43.9815,0.751,clears
+climate,Climate Politics & Policies,crisis,Crisis,142,216,65.7407,0.516,unresolved
+climate,Climate Politics & Policies,solutions,Solutions,164,216,75.9259,0.371,unresolved
+climate,Climate Politics & Policies,victim,Victim,56,216,25.9259,0.762,clears
+climate,Climate Politics & Policies,skepticism,Skepticism,58,216,26.8519,0.554,structural
+climate,Climate Politics & Policies,securitization,Securitization,111,216,51.3889,0.382,structural
+climate,Climate Politics & Policies,othering,Othering,31,216,14.3519,0.335,structural
+climate,Climate Politics & Policies,agency,Agency,214,216,99.0741,-0.03,structural
+climate,Environmental Harm & Natural Disasters,conflict,Conflict,58,135,42.963,0.504,structural
+climate,Environmental Harm & Natural Disasters,human_interest,Human Interest,59,135,43.7037,0.665,clears
+climate,Environmental Harm & Natural Disasters,economic,Economic,69,135,51.1111,0.719,clears
+climate,Environmental Harm & Natural Disasters,deservingness,Deservingness,7,135,5.1852,0.687,clears
+climate,Environmental Harm & Natural Disasters,responsibility,Responsibility,119,135,88.1481,0.318,structural
+climate,Environmental Harm & Natural Disasters,scientific,Scientific,102,135,75.5556,0.751,clears
+climate,Environmental Harm & Natural Disasters,crisis,Crisis,93,135,68.8889,0.516,unresolved
+climate,Environmental Harm & Natural Disasters,solutions,Solutions,87,135,64.4444,0.371,unresolved
+climate,Environmental Harm & Natural Disasters,victim,Victim,64,135,47.4074,0.762,clears
+climate,Environmental Harm & Natural Disasters,skepticism,Skepticism,18,135,13.3333,0.554,structural
+climate,Environmental Harm & Natural Disasters,securitization,Securitization,71,135,52.5926,0.382,structural
+climate,Environmental Harm & Natural Disasters,othering,Othering,3,135,2.2222,0.335,structural
+climate,Environmental Harm & Natural Disasters,agency,Agency,130,135,96.2963,-0.03,structural
+climate,Economy & Finance,conflict,Conflict,94,112,83.9286,0.504,structural
+climate,Economy & Finance,human_interest,Human Interest,18,112,16.0714,0.665,clears
+climate,Economy & Finance,economic,Economic,95,112,84.8214,0.719,clears
+climate,Economy & Finance,deservingness,Deservingness,14,112,12.5,0.687,clears
+climate,Economy & Finance,responsibility,Responsibility,108,112,96.4286,0.318,structural
+climate,Economy & Finance,scientific,Scientific,48,112,42.8571,0.751,clears
+climate,Economy & Finance,crisis,Crisis,63,112,56.25,0.516,unresolved
+climate,Economy & Finance,solutions,Solutions,101,112,90.1786,0.371,unresolved
+climate,Economy & Finance,victim,Victim,23,112,20.5357,0.762,clears
+climate,Economy & Finance,skepticism,Skepticism,26,112,23.2143,0.554,structural
+climate,Economy & Finance,securitization,Securitization,41,112,36.6071,0.382,structural
+climate,Economy & Finance,othering,Othering,16,112,14.2857,0.335,structural
+climate,Economy & Finance,agency,Agency,112,112,100.0,-0.03,structural
+climate,Alternative/Renewable Energy & Sustainability,conflict,Conflict,59,72,81.9444,0.504,structural
+climate,Alternative/Renewable Energy & Sustainability,human_interest,Human Interest,12,72,16.6667,0.665,clears
+climate,Alternative/Renewable Energy & Sustainability,economic,Economic,56,72,77.7778,0.719,clears
+climate,Alternative/Renewable Energy & Sustainability,deservingness,Deservingness,5,72,6.9444,0.687,clears
+climate,Alternative/Renewable Energy & Sustainability,responsibility,Responsibility,64,72,88.8889,0.318,structural
+climate,Alternative/Renewable Energy & Sustainability,scientific,Scientific,43,72,59.7222,0.751,clears
+climate,Alternative/Renewable Energy & Sustainability,crisis,Crisis,36,72,50.0,0.516,unresolved
+climate,Alternative/Renewable Energy & Sustainability,solutions,Solutions,64,72,88.8889,0.371,unresolved
+climate,Alternative/Renewable Energy & Sustainability,victim,Victim,15,72,20.8333,0.762,clears
+climate,Alternative/Renewable Energy & Sustainability,skepticism,Skepticism,29,72,40.2778,0.554,structural
+climate,Alternative/Renewable Energy & Sustainability,securitization,Securitization,25,72,34.7222,0.382,structural
+climate,Alternative/Renewable Energy & Sustainability,othering,Othering,8,72,11.1111,0.335,structural
+climate,Alternative/Renewable Energy & Sustainability,agency,Agency,71,72,98.6111,-0.03,structural
+climate,Water Management,conflict,Conflict,38,70,54.2857,0.504,structural
+climate,Water Management,human_interest,Human Interest,28,70,40.0,0.665,clears
+climate,Water Management,economic,Economic,46,70,65.7143,0.719,clears
+climate,Water Management,deservingness,Deservingness,10,70,14.2857,0.687,clears
+climate,Water Management,responsibility,Responsibility,63,70,90.0,0.318,structural
+climate,Water Management,scientific,Scientific,42,70,60.0,0.751,clears
+climate,Water Management,crisis,Crisis,42,70,60.0,0.516,unresolved
+climate,Water Management,solutions,Solutions,60,70,85.7143,0.371,unresolved
+climate,Water Management,victim,Victim,27,70,38.5714,0.762,clears
+climate,Water Management,skepticism,Skepticism,4,70,5.7143,0.554,structural
+climate,Water Management,securitization,Securitization,35,70,50.0,0.382,structural
+climate,Water Management,othering,Othering,2,70,2.8571,0.335,structural
+climate,Water Management,agency,Agency,69,70,98.5714,-0.03,structural
+climate,National Politics,conflict,Conflict,58,67,86.5672,0.504,structural
+climate,National Politics,human_interest,Human Interest,24,67,35.8209,0.665,clears
+climate,National Politics,economic,Economic,34,67,50.7463,0.719,clears
+climate,National Politics,deservingness,Deservingness,11,67,16.4179,0.687,clears
+climate,National Politics,responsibility,Responsibility,64,67,95.5224,0.318,structural
+climate,National Politics,scientific,Scientific,29,67,43.2836,0.751,clears
+climate,National Politics,crisis,Crisis,50,67,74.6269,0.516,unresolved
+climate,National Politics,solutions,Solutions,52,67,77.6119,0.371,unresolved
+climate,National Politics,victim,Victim,10,67,14.9254,0.762,clears
+climate,National Politics,skepticism,Skepticism,16,67,23.8806,0.554,structural
+climate,National Politics,securitization,Securitization,40,67,59.7015,0.382,structural
+climate,National Politics,othering,Othering,8,67,11.9403,0.335,structural
+climate,National Politics,agency,Agency,67,67,100.0,-0.03,structural
+climate,"Industries, Markets & Technologies",conflict,Conflict,51,66,77.2727,0.504,structural
+climate,"Industries, Markets & Technologies",human_interest,Human Interest,16,66,24.2424,0.665,clears
+climate,"Industries, Markets & Technologies",economic,Economic,47,66,71.2121,0.719,clears
+climate,"Industries, Markets & Technologies",deservingness,Deservingness,7,66,10.6061,0.687,clears
+climate,"Industries, Markets & Technologies",responsibility,Responsibility,61,66,92.4242,0.318,structural
+climate,"Industries, Markets & Technologies",scientific,Scientific,33,66,50.0,0.751,clears
+climate,"Industries, Markets & Technologies",crisis,Crisis,33,66,50.0,0.516,unresolved
+climate,"Industries, Markets & Technologies",solutions,Solutions,60,66,90.9091,0.371,unresolved
+climate,"Industries, Markets & Technologies",victim,Victim,17,66,25.7576,0.762,clears
+climate,"Industries, Markets & Technologies",skepticism,Skepticism,19,66,28.7879,0.554,structural
+climate,"Industries, Markets & Technologies",securitization,Securitization,27,66,40.9091,0.382,structural
+climate,"Industries, Markets & Technologies",othering,Othering,5,66,7.5758,0.335,structural
+climate,"Industries, Markets & Technologies",agency,Agency,65,66,98.4848,-0.03,structural
+climate,"Biodiversity, Nature & Science",conflict,Conflict,42,66,63.6364,0.504,structural
+climate,"Biodiversity, Nature & Science",human_interest,Human Interest,23,66,34.8485,0.665,clears
+climate,"Biodiversity, Nature & Science",economic,Economic,37,66,56.0606,0.719,clears
+climate,"Biodiversity, Nature & Science",deservingness,Deservingness,3,66,4.5455,0.687,clears
+climate,"Biodiversity, Nature & Science",responsibility,Responsibility,58,66,87.8788,0.318,structural
+climate,"Biodiversity, Nature & Science",scientific,Scientific,49,66,74.2424,0.751,clears
+climate,"Biodiversity, Nature & Science",crisis,Crisis,34,66,51.5152,0.516,unresolved
+climate,"Biodiversity, Nature & Science",solutions,Solutions,51,66,77.2727,0.371,unresolved
+climate,"Biodiversity, Nature & Science",victim,Victim,16,66,24.2424,0.762,clears
+climate,"Biodiversity, Nature & Science",skepticism,Skepticism,18,66,27.2727,0.554,structural
+climate,"Biodiversity, Nature & Science",securitization,Securitization,30,66,45.4545,0.382,structural
+climate,"Biodiversity, Nature & Science",othering,Othering,2,66,3.0303,0.335,structural
+climate,"Biodiversity, Nature & Science",agency,Agency,65,66,98.4848,-0.03,structural
+climate,Combustion Fuels & Natural Resources,conflict,Conflict,41,47,87.234,0.504,structural
+climate,Combustion Fuels & Natural Resources,human_interest,Human Interest,9,47,19.1489,0.665,clears
+climate,Combustion Fuels & Natural Resources,economic,Economic,42,47,89.3617,0.719,clears
+climate,Combustion Fuels & Natural Resources,deservingness,Deservingness,3,47,6.383,0.687,clears
+climate,Combustion Fuels & Natural Resources,responsibility,Responsibility,45,47,95.7447,0.318,structural
+climate,Combustion Fuels & Natural Resources,scientific,Scientific,25,47,53.1915,0.751,clears
+climate,Combustion Fuels & Natural Resources,crisis,Crisis,25,47,53.1915,0.516,unresolved
+climate,Combustion Fuels & Natural Resources,solutions,Solutions,43,47,91.4894,0.371,unresolved
+climate,Combustion Fuels & Natural Resources,victim,Victim,6,47,12.766,0.762,clears
+climate,Combustion Fuels & Natural Resources,skepticism,Skepticism,11,47,23.4043,0.554,structural
+climate,Combustion Fuels & Natural Resources,securitization,Securitization,19,47,40.4255,0.382,structural
+climate,Combustion Fuels & Natural Resources,othering,Othering,3,47,6.383,0.335,structural
+climate,Combustion Fuels & Natural Resources,agency,Agency,47,47,100.0,-0.03,structural
+climate,"Arts, Culture, Media & Sports",conflict,Conflict,20,42,47.619,0.504,structural
+climate,"Arts, Culture, Media & Sports",human_interest,Human Interest,31,42,73.8095,0.665,clears
+climate,"Arts, Culture, Media & Sports",economic,Economic,13,42,30.9524,0.719,clears
+climate,"Arts, Culture, Media & Sports",deservingness,Deservingness,2,42,4.7619,0.687,clears
+climate,"Arts, Culture, Media & Sports",responsibility,Responsibility,29,42,69.0476,0.318,structural
+climate,"Arts, Culture, Media & Sports",scientific,Scientific,15,42,35.7143,0.751,clears
+climate,"Arts, Culture, Media & Sports",crisis,Crisis,31,42,73.8095,0.516,unresolved
+climate,"Arts, Culture, Media & Sports",solutions,Solutions,26,42,61.9048,0.371,unresolved
+climate,"Arts, Culture, Media & Sports",victim,Victim,13,42,30.9524,0.762,clears
+climate,"Arts, Culture, Media & Sports",skepticism,Skepticism,7,42,16.6667,0.554,structural
+climate,"Arts, Culture, Media & Sports",securitization,Securitization,20,42,47.619,0.382,structural
+climate,"Arts, Culture, Media & Sports",othering,Othering,2,42,4.7619,0.335,structural
+climate,"Arts, Culture, Media & Sports",agency,Agency,38,42,90.4762,-0.03,structural
+climate,Agriculture,conflict,Conflict,22,39,56.4103,0.504,structural
+climate,Agriculture,human_interest,Human Interest,18,39,46.1538,0.665,clears
+climate,Agriculture,economic,Economic,27,39,69.2308,0.719,clears
+climate,Agriculture,deservingness,Deservingness,12,39,30.7692,0.687,clears
+climate,Agriculture,responsibility,Responsibility,33,39,84.6154,0.318,structural
+climate,Agriculture,scientific,Scientific,19,39,48.7179,0.751,clears
+climate,Agriculture,crisis,Crisis,23,39,58.9744,0.516,unresolved
+climate,Agriculture,solutions,Solutions,31,39,79.4872,0.371,unresolved
+climate,Agriculture,victim,Victim,18,39,46.1538,0.762,clears
+climate,Agriculture,skepticism,Skepticism,6,39,15.3846,0.554,structural
+climate,Agriculture,securitization,Securitization,20,39,51.2821,0.382,structural
+climate,Agriculture,othering,Othering,10,39,25.641,0.335,structural
+climate,Agriculture,agency,Agency,39,39,100.0,-0.03,structural
+climate,Global Politics & Politics Abroad,conflict,Conflict,29,35,82.8571,0.504,structural
+climate,Global Politics & Politics Abroad,human_interest,Human Interest,8,35,22.8571,0.665,clears
+climate,Global Politics & Politics Abroad,economic,Economic,19,35,54.2857,0.719,clears
+climate,Global Politics & Politics Abroad,deservingness,Deservingness,1,35,2.8571,0.687,clears
+climate,Global Politics & Politics Abroad,responsibility,Responsibility,32,35,91.4286,0.318,structural
+climate,Global Politics & Politics Abroad,scientific,Scientific,13,35,37.1429,0.751,clears
+climate,Global Politics & Politics Abroad,crisis,Crisis,23,35,65.7143,0.516,unresolved
+climate,Global Politics & Politics Abroad,solutions,Solutions,29,35,82.8571,0.371,unresolved
+climate,Global Politics & Politics Abroad,victim,Victim,10,35,28.5714,0.762,clears
+climate,Global Politics & Politics Abroad,skepticism,Skepticism,10,35,28.5714,0.554,structural
+climate,Global Politics & Politics Abroad,securitization,Securitization,19,35,54.2857,0.382,structural
+climate,Global Politics & Politics Abroad,othering,Othering,3,35,8.5714,0.335,structural
+climate,Global Politics & Politics Abroad,agency,Agency,34,35,97.1429,-0.03,structural
+climate,Public Climate Discourse,conflict,Conflict,18,27,66.6667,0.504,structural
+climate,Public Climate Discourse,human_interest,Human Interest,11,27,40.7407,0.665,clears
+climate,Public Climate Discourse,economic,Economic,11,27,40.7407,0.719,clears
+climate,Public Climate Discourse,deservingness,Deservingness,3,27,11.1111,0.687,clears
+climate,Public Climate Discourse,responsibility,Responsibility,19,27,70.3704,0.318,structural
+climate,Public Climate Discourse,scientific,Scientific,13,27,48.1481,0.751,clears
+climate,Public Climate Discourse,crisis,Crisis,20,27,74.0741,0.516,unresolved
+climate,Public Climate Discourse,solutions,Solutions,20,27,74.0741,0.371,unresolved
+climate,Public Climate Discourse,victim,Victim,7,27,25.9259,0.762,clears
+climate,Public Climate Discourse,skepticism,Skepticism,4,27,14.8148,0.554,structural
+climate,Public Climate Discourse,securitization,Securitization,19,27,70.3704,0.382,structural
+climate,Public Climate Discourse,othering,Othering,5,27,18.5185,0.335,structural
+climate,Public Climate Discourse,agency,Agency,26,27,96.2963,-0.03,structural
+climate,Housing & Urban Planning,conflict,Conflict,9,26,34.6154,0.504,structural
+climate,Housing & Urban Planning,human_interest,Human Interest,11,26,42.3077,0.665,clears
+climate,Housing & Urban Planning,economic,Economic,16,26,61.5385,0.719,clears
+climate,Housing & Urban Planning,deservingness,Deservingness,0,26,0.0,0.687,clears
+climate,Housing & Urban Planning,responsibility,Responsibility,22,26,84.6154,0.318,structural
+climate,Housing & Urban Planning,scientific,Scientific,17,26,65.3846,0.751,clears
+climate,Housing & Urban Planning,crisis,Crisis,9,26,34.6154,0.516,unresolved
+climate,Housing & Urban Planning,solutions,Solutions,22,26,84.6154,0.371,unresolved
+climate,Housing & Urban Planning,victim,Victim,5,26,19.2308,0.762,clears
+climate,Housing & Urban Planning,skepticism,Skepticism,3,26,11.5385,0.554,structural
+climate,Housing & Urban Planning,securitization,Securitization,5,26,19.2308,0.382,structural
+climate,Housing & Urban Planning,othering,Othering,3,26,11.5385,0.335,structural
+climate,Housing & Urban Planning,agency,Agency,25,26,96.1538,-0.03,structural
+climate,Corona,conflict,Conflict,10,12,83.3333,0.504,structural
+climate,Corona,human_interest,Human Interest,5,12,41.6667,0.665,clears
+climate,Corona,economic,Economic,8,12,66.6667,0.719,clears
+climate,Corona,deservingness,Deservingness,2,12,16.6667,0.687,clears
+climate,Corona,responsibility,Responsibility,11,12,91.6667,0.318,structural
+climate,Corona,scientific,Scientific,6,12,50.0,0.751,clears
+climate,Corona,crisis,Crisis,10,12,83.3333,0.516,unresolved
+climate,Corona,solutions,Solutions,10,12,83.3333,0.371,unresolved
+climate,Corona,victim,Victim,2,12,16.6667,0.762,clears
+climate,Corona,skepticism,Skepticism,1,12,8.3333,0.554,structural
+climate,Corona,securitization,Securitization,8,12,66.6667,0.382,structural
+climate,Corona,othering,Othering,2,12,16.6667,0.335,structural
+climate,Corona,agency,Agency,12,12,100.0,-0.03,structural
+climate,Social Life,conflict,Conflict,6,8,75.0,0.504,structural
+climate,Social Life,human_interest,Human Interest,5,8,62.5,0.665,clears
+climate,Social Life,economic,Economic,3,8,37.5,0.719,clears
+climate,Social Life,deservingness,Deservingness,1,8,12.5,0.687,clears
+climate,Social Life,responsibility,Responsibility,7,8,87.5,0.318,structural
+climate,Social Life,scientific,Scientific,4,8,50.0,0.751,clears
+climate,Social Life,crisis,Crisis,5,8,62.5,0.516,unresolved
+climate,Social Life,solutions,Solutions,7,8,87.5,0.371,unresolved
+climate,Social Life,victim,Victim,2,8,25.0,0.762,clears
+climate,Social Life,skepticism,Skepticism,2,8,25.0,0.554,structural
+climate,Social Life,securitization,Securitization,3,8,37.5,0.382,structural
+climate,Social Life,othering,Othering,1,8,12.5,0.335,structural
+climate,Social Life,agency,Agency,8,8,100.0,-0.03,structural
+climate,Global Politics& Politcs Abroad,conflict,Conflict,5,5,100.0,0.504,structural
+climate,Global Politics& Politcs Abroad,human_interest,Human Interest,0,5,0.0,0.665,clears
+climate,Global Politics& Politcs Abroad,economic,Economic,5,5,100.0,0.719,clears
+climate,Global Politics& Politcs Abroad,deservingness,Deservingness,0,5,0.0,0.687,clears
+climate,Global Politics& Politcs Abroad,responsibility,Responsibility,5,5,100.0,0.318,structural
+climate,Global Politics& Politcs Abroad,scientific,Scientific,2,5,40.0,0.751,clears
+climate,Global Politics& Politcs Abroad,crisis,Crisis,3,5,60.0,0.516,unresolved
+climate,Global Politics& Politcs Abroad,solutions,Solutions,4,5,80.0,0.371,unresolved
+climate,Global Politics& Politcs Abroad,victim,Victim,0,5,0.0,0.762,clears
+climate,Global Politics& Politcs Abroad,skepticism,Skepticism,2,5,40.0,0.554,structural
+climate,Global Politics& Politcs Abroad,securitization,Securitization,2,5,40.0,0.382,structural
+climate,Global Politics& Politcs Abroad,othering,Othering,2,5,40.0,0.335,structural
+climate,Global Politics& Politcs Abroad,agency,Agency,5,5,100.0,-0.03,structural
+climate,Health,conflict,Conflict,2,4,50.0,0.504,structural
+climate,Health,human_interest,Human Interest,2,4,50.0,0.665,clears
+climate,Health,economic,Economic,2,4,50.0,0.719,clears
+climate,Health,deservingness,Deservingness,1,4,25.0,0.687,clears
+climate,Health,responsibility,Responsibility,2,4,50.0,0.318,structural
+climate,Health,scientific,Scientific,2,4,50.0,0.751,clears
+climate,Health,crisis,Crisis,0,4,0.0,0.516,unresolved
+climate,Health,solutions,Solutions,4,4,100.0,0.371,unresolved
+climate,Health,victim,Victim,0,4,0.0,0.762,clears
+climate,Health,skepticism,Skepticism,2,4,50.0,0.554,structural
+climate,Health,securitization,Securitization,0,4,0.0,0.382,structural
+climate,Health,othering,Othering,1,4,25.0,0.335,structural
+climate,Health,agency,Agency,4,4,100.0,-0.03,structural
+migration,Asylum,conflict,Conflict,528,715,73.8462,0.504,structural
+migration,Asylum,human_interest,Human Interest,289,715,40.4196,0.665,clears
+migration,Asylum,economic,Economic,170,715,23.7762,0.719,clears
+migration,Asylum,deservingness,Deservingness,368,715,51.4685,0.687,clears
+migration,Asylum,responsibility,Responsibility,613,715,85.7343,0.318,structural
+migration,Asylum,humanitarian,Humanitarian,351,715,49.0909,0.658,clears
+migration,Asylum,security,Security,208,715,29.0909,0.58,unresolved
+migration,Asylum,policy,Policy,640,715,89.5105,0.603,clears
+migration,Asylum,securitization,Securitization,124,715,17.3427,0.382,structural
+migration,Asylum,othering,Othering,318,715,44.4755,0.335,structural
+migration,Asylum,agency,Agency,711,715,99.4406,-0.03,structural
+migration,Migration Routes,conflict,Conflict,285,329,86.6261,0.504,structural
+migration,Migration Routes,human_interest,Human Interest,157,329,47.7204,0.665,clears
+migration,Migration Routes,economic,Economic,114,329,34.6505,0.719,clears
+migration,Migration Routes,deservingness,Deservingness,157,329,47.7204,0.687,clears
+migration,Migration Routes,responsibility,Responsibility,288,329,87.538,0.318,structural
+migration,Migration Routes,humanitarian,Humanitarian,193,329,58.6626,0.658,clears
+migration,Migration Routes,security,Security,177,329,53.7994,0.58,unresolved
+migration,Migration Routes,policy,Policy,284,329,86.3222,0.603,clears
+migration,Migration Routes,securitization,Securitization,117,329,35.5623,0.382,structural
+migration,Migration Routes,othering,Othering,214,329,65.0456,0.335,structural
+migration,Migration Routes,agency,Agency,324,329,98.4802,-0.03,structural
+migration,National Politics & Law,conflict,Conflict,244,282,86.5248,0.504,structural
+migration,National Politics & Law,human_interest,Human Interest,104,282,36.8794,0.665,clears
+migration,National Politics & Law,economic,Economic,87,282,30.8511,0.719,clears
+migration,National Politics & Law,deservingness,Deservingness,162,282,57.4468,0.687,clears
+migration,National Politics & Law,responsibility,Responsibility,235,282,83.3333,0.318,structural
+migration,National Politics & Law,humanitarian,Humanitarian,120,282,42.5532,0.658,clears
+migration,National Politics & Law,security,Security,114,282,40.4255,0.58,unresolved
+migration,National Politics & Law,policy,Policy,258,282,91.4894,0.603,clears
+migration,National Politics & Law,securitization,Securitization,37,282,13.1206,0.382,structural
+migration,National Politics & Law,othering,Othering,164,282,58.156,0.335,structural
+migration,National Politics & Law,agency,Agency,281,282,99.6454,-0.03,structural
+migration,Foreign Politics & Global Affairs,conflict,Conflict,230,251,91.6335,0.504,structural
+migration,Foreign Politics & Global Affairs,human_interest,Human Interest,101,251,40.239,0.665,clears
+migration,Foreign Politics & Global Affairs,economic,Economic,80,251,31.8725,0.719,clears
+migration,Foreign Politics & Global Affairs,deservingness,Deservingness,147,251,58.5657,0.687,clears
+migration,Foreign Politics & Global Affairs,responsibility,Responsibility,219,251,87.251,0.318,structural
+migration,Foreign Politics & Global Affairs,humanitarian,Humanitarian,132,251,52.5896,0.658,clears
+migration,Foreign Politics & Global Affairs,security,Security,132,251,52.5896,0.58,unresolved
+migration,Foreign Politics & Global Affairs,policy,Policy,225,251,89.6414,0.603,clears
+migration,Foreign Politics & Global Affairs,securitization,Securitization,100,251,39.8406,0.382,structural
+migration,Foreign Politics & Global Affairs,othering,Othering,164,251,65.3386,0.335,structural
+migration,Foreign Politics & Global Affairs,agency,Agency,251,251,100.0,-0.03,structural
+migration,Migration & Labour,conflict,Conflict,198,246,80.4878,0.504,structural
+migration,Migration & Labour,human_interest,Human Interest,116,246,47.1545,0.665,clears
+migration,Migration & Labour,economic,Economic,138,246,56.0976,0.719,clears
+migration,Migration & Labour,deservingness,Deservingness,133,246,54.065,0.687,clears
+migration,Migration & Labour,responsibility,Responsibility,197,246,80.0813,0.318,structural
+migration,Migration & Labour,humanitarian,Humanitarian,119,246,48.374,0.658,clears
+migration,Migration & Labour,security,Security,98,246,39.8374,0.58,unresolved
+migration,Migration & Labour,policy,Policy,222,246,90.2439,0.603,clears
+migration,Migration & Labour,securitization,Securitization,39,246,15.8537,0.382,structural
+migration,Migration & Labour,othering,Othering,166,246,67.4797,0.335,structural
+migration,Migration & Labour,agency,Agency,246,246,100.0,-0.03,structural
+migration,Migration & Integration,conflict,Conflict,166,208,79.8077,0.504,structural
+migration,Migration & Integration,human_interest,Human Interest,79,208,37.9808,0.665,clears
+migration,Migration & Integration,economic,Economic,79,208,37.9808,0.719,clears
+migration,Migration & Integration,deservingness,Deservingness,116,208,55.7692,0.687,clears
+migration,Migration & Integration,responsibility,Responsibility,156,208,75.0,0.318,structural
+migration,Migration & Integration,humanitarian,Humanitarian,79,208,37.9808,0.658,clears
+migration,Migration & Integration,security,Security,89,208,42.7885,0.58,unresolved
+migration,Migration & Integration,policy,Policy,184,208,88.4615,0.603,clears
+migration,Migration & Integration,securitization,Securitization,30,208,14.4231,0.382,structural
+migration,Migration & Integration,othering,Othering,117,208,56.25,0.335,structural
+migration,Migration & Integration,agency,Agency,198,208,95.1923,-0.03,structural
+migration,"Crime, Security & Migration",conflict,Conflict,109,128,85.1562,0.504,structural
+migration,"Crime, Security & Migration",human_interest,Human Interest,65,128,50.7812,0.665,clears
+migration,"Crime, Security & Migration",economic,Economic,33,128,25.7812,0.719,clears
+migration,"Crime, Security & Migration",deservingness,Deservingness,77,128,60.1562,0.687,clears
+migration,"Crime, Security & Migration",responsibility,Responsibility,108,128,84.375,0.318,structural
+migration,"Crime, Security & Migration",humanitarian,Humanitarian,59,128,46.0938,0.658,clears
+migration,"Crime, Security & Migration",security,Security,68,128,53.125,0.58,unresolved
+migration,"Crime, Security & Migration",policy,Policy,113,128,88.2812,0.603,clears
+migration,"Crime, Security & Migration",securitization,Securitization,27,128,21.0938,0.382,structural
+migration,"Crime, Security & Migration",othering,Othering,74,128,57.8125,0.335,structural
+migration,"Crime, Security & Migration",agency,Agency,126,128,98.4375,-0.03,structural
+migration,EU Politics,conflict,Conflict,104,118,88.1356,0.504,structural
+migration,EU Politics,human_interest,Human Interest,40,118,33.8983,0.665,clears
+migration,EU Politics,economic,Economic,58,118,49.1525,0.719,clears
+migration,EU Politics,deservingness,Deservingness,61,118,51.6949,0.687,clears
+migration,EU Politics,responsibility,Responsibility,100,118,84.7458,0.318,structural
+migration,EU Politics,humanitarian,Humanitarian,54,118,45.7627,0.658,clears
+migration,EU Politics,security,Security,61,118,51.6949,0.58,unresolved
+migration,EU Politics,policy,Policy,110,118,93.2203,0.603,clears
+migration,EU Politics,securitization,Securitization,35,118,29.661,0.382,structural
+migration,EU Politics,othering,Othering,75,118,63.5593,0.335,structural
+migration,EU Politics,agency,Agency,117,118,99.1525,-0.03,structural
+migration,Migration & Housing,conflict,Conflict,77,103,74.7573,0.504,structural
+migration,Migration & Housing,human_interest,Human Interest,27,103,26.2136,0.665,clears
+migration,Migration & Housing,economic,Economic,51,103,49.5146,0.719,clears
+migration,Migration & Housing,deservingness,Deservingness,54,103,52.4272,0.687,clears
+migration,Migration & Housing,responsibility,Responsibility,87,103,84.466,0.318,structural
+migration,Migration & Housing,humanitarian,Humanitarian,34,103,33.0097,0.658,clears
+migration,Migration & Housing,security,Security,24,103,23.301,0.58,unresolved
+migration,Migration & Housing,policy,Policy,97,103,94.1748,0.603,clears
+migration,Migration & Housing,securitization,Securitization,9,103,8.7379,0.382,structural
+migration,Migration & Housing,othering,Othering,44,103,42.7184,0.335,structural
+migration,Migration & Housing,agency,Agency,101,103,98.0583,-0.03,structural
+migration,"Economics, Businesses, Industries, Markets & Finances",conflict,Conflict,61,101,60.396,0.504,structural
+migration,"Economics, Businesses, Industries, Markets & Finances",human_interest,Human Interest,47,101,46.5347,0.665,clears
+migration,"Economics, Businesses, Industries, Markets & Finances",economic,Economic,63,101,62.3762,0.719,clears
+migration,"Economics, Businesses, Industries, Markets & Finances",deservingness,Deservingness,49,101,48.5149,0.687,clears
+migration,"Economics, Businesses, Industries, Markets & Finances",responsibility,Responsibility,73,101,72.2772,0.318,structural
+migration,"Economics, Businesses, Industries, Markets & Finances",humanitarian,Humanitarian,47,101,46.5347,0.658,clears
+migration,"Economics, Businesses, Industries, Markets & Finances",security,Security,27,101,26.7327,0.58,unresolved
+migration,"Economics, Businesses, Industries, Markets & Finances",policy,Policy,87,101,86.1386,0.603,clears
+migration,"Economics, Businesses, Industries, Markets & Finances",securitization,Securitization,8,101,7.9208,0.382,structural
+migration,"Economics, Businesses, Industries, Markets & Finances",othering,Othering,42,101,41.5842,0.335,structural
+migration,"Economics, Businesses, Industries, Markets & Finances",agency,Agency,98,101,97.0297,-0.03,structural
+migration,"Conflicts, Wars & Terrorism",conflict,Conflict,81,91,89.011,0.504,structural
+migration,"Conflicts, Wars & Terrorism",human_interest,Human Interest,52,91,57.1429,0.665,clears
+migration,"Conflicts, Wars & Terrorism",economic,Economic,24,91,26.3736,0.719,clears
+migration,"Conflicts, Wars & Terrorism",deservingness,Deservingness,39,91,42.8571,0.687,clears
+migration,"Conflicts, Wars & Terrorism",responsibility,Responsibility,71,91,78.022,0.318,structural
+migration,"Conflicts, Wars & Terrorism",humanitarian,Humanitarian,71,91,78.022,0.658,clears
+migration,"Conflicts, Wars & Terrorism",security,Security,47,91,51.6484,0.58,unresolved
+migration,"Conflicts, Wars & Terrorism",policy,Policy,60,91,65.9341,0.603,clears
+migration,"Conflicts, Wars & Terrorism",securitization,Securitization,43,91,47.2527,0.382,structural
+migration,"Conflicts, Wars & Terrorism",othering,Othering,55,91,60.4396,0.335,structural
+migration,"Conflicts, Wars & Terrorism",agency,Agency,91,91,100.0,-0.03,structural
+migration,Education,conflict,Conflict,39,78,50.0,0.504,structural
+migration,Education,human_interest,Human Interest,50,78,64.1026,0.665,clears
+migration,Education,economic,Economic,18,78,23.0769,0.719,clears
+migration,Education,deservingness,Deservingness,41,78,52.5641,0.687,clears
+migration,Education,responsibility,Responsibility,58,78,74.359,0.318,structural
+migration,Education,humanitarian,Humanitarian,47,78,60.2564,0.658,clears
+migration,Education,security,Security,17,78,21.7949,0.58,unresolved
+migration,Education,policy,Policy,66,78,84.6154,0.603,clears
+migration,Education,securitization,Securitization,3,78,3.8462,0.382,structural
+migration,Education,othering,Othering,31,78,39.7436,0.335,structural
+migration,Education,agency,Agency,77,78,98.7179,-0.03,structural
+migration,Religion,conflict,Conflict,57,67,85.0746,0.504,structural
+migration,Religion,human_interest,Human Interest,43,67,64.1791,0.665,clears
+migration,Religion,economic,Economic,17,67,25.3731,0.719,clears
+migration,Religion,deservingness,Deservingness,47,67,70.1493,0.687,clears
+migration,Religion,responsibility,Responsibility,52,67,77.6119,0.318,structural
+migration,Religion,humanitarian,Humanitarian,44,67,65.6716,0.658,clears
+migration,Religion,security,Security,32,67,47.7612,0.58,unresolved
+migration,Religion,policy,Policy,43,67,64.1791,0.603,clears
+migration,Religion,securitization,Securitization,18,67,26.8657,0.382,structural
+migration,Religion,othering,Othering,41,67,61.194,0.335,structural
+migration,Religion,agency,Agency,63,67,94.0299,-0.03,structural
+migration,Population Trends,conflict,Conflict,28,61,45.9016,0.504,structural
+migration,Population Trends,human_interest,Human Interest,3,61,4.918,0.665,clears
+migration,Population Trends,economic,Economic,9,61,14.7541,0.719,clears
+migration,Population Trends,deservingness,Deservingness,10,61,16.3934,0.687,clears
+migration,Population Trends,responsibility,Responsibility,35,61,57.377,0.318,structural
+migration,Population Trends,humanitarian,Humanitarian,4,61,6.5574,0.658,clears
+migration,Population Trends,security,Security,9,61,14.7541,0.58,unresolved
+migration,Population Trends,policy,Policy,53,61,86.8852,0.603,clears
+migration,Population Trends,securitization,Securitization,1,61,1.6393,0.382,structural
+migration,Population Trends,othering,Othering,18,61,29.5082,0.335,structural
+migration,Population Trends,agency,Agency,46,61,75.4098,-0.03,structural
+migration,Families,conflict,Conflict,27,40,67.5,0.504,structural
+migration,Families,human_interest,Human Interest,31,40,77.5,0.665,clears
+migration,Families,economic,Economic,6,40,15.0,0.719,clears
+migration,Families,deservingness,Deservingness,32,40,80.0,0.687,clears
+migration,Families,responsibility,Responsibility,22,40,55.0,0.318,structural
+migration,Families,humanitarian,Humanitarian,31,40,77.5,0.658,clears
+migration,Families,security,Security,1,40,2.5,0.58,unresolved
+migration,Families,policy,Policy,33,40,82.5,0.603,clears
+migration,Families,securitization,Securitization,4,40,10.0,0.382,structural
+migration,Families,othering,Othering,5,40,12.5,0.335,structural
+migration,Families,agency,Agency,40,40,100.0,-0.03,structural
+migration,Health,conflict,Conflict,17,35,48.5714,0.504,structural
+migration,Health,human_interest,Human Interest,27,35,77.1429,0.665,clears
+migration,Health,economic,Economic,5,35,14.2857,0.719,clears
+migration,Health,deservingness,Deservingness,26,35,74.2857,0.687,clears
+migration,Health,responsibility,Responsibility,23,35,65.7143,0.318,structural
+migration,Health,humanitarian,Humanitarian,25,35,71.4286,0.658,clears
+migration,Health,security,Security,14,35,40.0,0.58,unresolved
+migration,Health,policy,Policy,28,35,80.0,0.603,clears
+migration,Health,securitization,Securitization,9,35,25.7143,0.382,structural
+migration,Health,othering,Othering,14,35,40.0,0.335,structural
+migration,Health,agency,Agency,35,35,100.0,-0.03,structural
+migration,Housing,conflict,Conflict,19,29,65.5172,0.504,structural
+migration,Housing,human_interest,Human Interest,10,29,34.4828,0.665,clears
+migration,Housing,economic,Economic,15,29,51.7241,0.719,clears
+migration,Housing,deservingness,Deservingness,11,29,37.931,0.687,clears
+migration,Housing,responsibility,Responsibility,25,29,86.2069,0.318,structural
+migration,Housing,humanitarian,Humanitarian,12,29,41.3793,0.658,clears
+migration,Housing,security,Security,7,29,24.1379,0.58,unresolved
+migration,Housing,policy,Policy,27,29,93.1034,0.603,clears
+migration,Housing,securitization,Securitization,1,29,3.4483,0.382,structural
+migration,Housing,othering,Othering,16,29,55.1724,0.335,structural
+migration,Housing,agency,Agency,29,29,100.0,-0.03,structural
+migration,Natural Disasters & Accidents,conflict,Conflict,20,25,80.0,0.504,structural
+migration,Natural Disasters & Accidents,human_interest,Human Interest,21,25,84.0,0.665,clears
+migration,Natural Disasters & Accidents,economic,Economic,5,25,20.0,0.719,clears
+migration,Natural Disasters & Accidents,deservingness,Deservingness,17,25,68.0,0.687,clears
+migration,Natural Disasters & Accidents,responsibility,Responsibility,17,25,68.0,0.318,structural
+migration,Natural Disasters & Accidents,humanitarian,Humanitarian,19,25,76.0,0.658,clears
+migration,Natural Disasters & Accidents,security,Security,9,25,36.0,0.58,unresolved
+migration,Natural Disasters & Accidents,policy,Policy,18,25,72.0,0.603,clears
+migration,Natural Disasters & Accidents,securitization,Securitization,3,25,12.0,0.382,structural
+migration,Natural Disasters & Accidents,othering,Othering,10,25,40.0,0.335,structural
+migration,Natural Disasters & Accidents,agency,Agency,25,25,100.0,-0.03,structural
+migration,Transportation,conflict,Conflict,14,23,60.8696,0.504,structural
+migration,Transportation,human_interest,Human Interest,14,23,60.8696,0.665,clears
+migration,Transportation,economic,Economic,7,23,30.4348,0.719,clears
+migration,Transportation,deservingness,Deservingness,15,23,65.2174,0.687,clears
+migration,Transportation,responsibility,Responsibility,17,23,73.913,0.318,structural
+migration,Transportation,humanitarian,Humanitarian,12,23,52.1739,0.658,clears
+migration,Transportation,security,Security,5,23,21.7391,0.58,unresolved
+migration,Transportation,policy,Policy,18,23,78.2609,0.603,clears
+migration,Transportation,securitization,Securitization,2,23,8.6957,0.382,structural
+migration,Transportation,othering,Othering,10,23,43.4783,0.335,structural
+migration,Transportation,agency,Agency,23,23,100.0,-0.03,structural
+migration,"Migration, Discrimination & Racism",conflict,Conflict,13,16,81.25,0.504,structural
+migration,"Migration, Discrimination & Racism",human_interest,Human Interest,10,16,62.5,0.665,clears
+migration,"Migration, Discrimination & Racism",economic,Economic,4,16,25.0,0.719,clears
+migration,"Migration, Discrimination & Racism",deservingness,Deservingness,8,16,50.0,0.687,clears
+migration,"Migration, Discrimination & Racism",responsibility,Responsibility,12,16,75.0,0.318,structural
+migration,"Migration, Discrimination & Racism",humanitarian,Humanitarian,12,16,75.0,0.658,clears
+migration,"Migration, Discrimination & Racism",security,Security,7,16,43.75,0.58,unresolved
+migration,"Migration, Discrimination & Racism",policy,Policy,13,16,81.25,0.603,clears
+migration,"Migration, Discrimination & Racism",securitization,Securitization,3,16,18.75,0.382,structural
+migration,"Migration, Discrimination & Racism",othering,Othering,13,16,81.25,0.335,structural
+migration,"Migration, Discrimination & Racism",agency,Agency,16,16,100.0,-0.03,structural
+migration,Migration & Racism,conflict,Conflict,9,9,100.0,0.504,structural
+migration,Migration & Racism,human_interest,Human Interest,3,9,33.3333,0.665,clears
+migration,Migration & Racism,economic,Economic,4,9,44.4444,0.719,clears
+migration,Migration & Racism,deservingness,Deservingness,5,9,55.5556,0.687,clears
+migration,Migration & Racism,responsibility,Responsibility,8,9,88.8889,0.318,structural
+migration,Migration & Racism,humanitarian,Humanitarian,3,9,33.3333,0.658,clears
+migration,Migration & Racism,security,Security,6,9,66.6667,0.58,unresolved
+migration,Migration & Racism,policy,Policy,8,9,88.8889,0.603,clears
+migration,Migration & Racism,securitization,Securitization,2,9,22.2222,0.382,structural
+migration,Migration & Racism,othering,Othering,7,9,77.7778,0.335,structural
+migration,Migration & Racism,agency,Agency,9,9,100.0,-0.03,structural
+migration,Society & Inclusion,conflict,Conflict,8,8,100.0,0.504,structural
+migration,Society & Inclusion,human_interest,Human Interest,4,8,50.0,0.665,clears
+migration,Society & Inclusion,economic,Economic,1,8,12.5,0.719,clears
+migration,Society & Inclusion,deservingness,Deservingness,8,8,100.0,0.687,clears
+migration,Society & Inclusion,responsibility,Responsibility,5,8,62.5,0.318,structural
+migration,Society & Inclusion,humanitarian,Humanitarian,6,8,75.0,0.658,clears
+migration,Society & Inclusion,security,Security,3,8,37.5,0.58,unresolved
+migration,Society & Inclusion,policy,Policy,7,8,87.5,0.603,clears
+migration,Society & Inclusion,securitization,Securitization,2,8,25.0,0.382,structural
+migration,Society & Inclusion,othering,Othering,6,8,75.0,0.335,structural
+migration,Society & Inclusion,agency,Agency,8,8,100.0,-0.03,structural
+migration,Humanitarian Aid,conflict,Conflict,4,6,66.6667,0.504,structural
+migration,Humanitarian Aid,human_interest,Human Interest,6,6,100.0,0.665,clears
+migration,Humanitarian Aid,economic,Economic,2,6,33.3333,0.719,clears
+migration,Humanitarian Aid,deservingness,Deservingness,5,6,83.3333,0.687,clears
+migration,Humanitarian Aid,responsibility,Responsibility,5,6,83.3333,0.318,structural
+migration,Humanitarian Aid,humanitarian,Humanitarian,6,6,100.0,0.658,clears
+migration,Humanitarian Aid,security,Security,0,6,0.0,0.58,unresolved
+migration,Humanitarian Aid,policy,Policy,2,6,33.3333,0.603,clears
+migration,Humanitarian Aid,securitization,Securitization,1,6,16.6667,0.382,structural
+migration,Humanitarian Aid,othering,Othering,1,6,16.6667,0.335,structural
+migration,Humanitarian Aid,agency,Agency,6,6,100.0,-0.03,structural
+migration,Human Rights & Humanitarian Aid,conflict,Conflict,4,4,100.0,0.504,structural
+migration,Human Rights & Humanitarian Aid,human_interest,Human Interest,4,4,100.0,0.665,clears
+migration,Human Rights & Humanitarian Aid,economic,Economic,0,4,0.0,0.719,clears
+migration,Human Rights & Humanitarian Aid,deservingness,Deservingness,3,4,75.0,0.687,clears
+migration,Human Rights & Humanitarian Aid,responsibility,Responsibility,4,4,100.0,0.318,structural
+migration,Human Rights & Humanitarian Aid,humanitarian,Humanitarian,4,4,100.0,0.658,clears
+migration,Human Rights & Humanitarian Aid,security,Security,1,4,25.0,0.58,unresolved
+migration,Human Rights & Humanitarian Aid,policy,Policy,4,4,100.0,0.603,clears
+migration,Human Rights & Humanitarian Aid,securitization,Securitization,1,4,25.0,0.382,structural
+migration,Human Rights & Humanitarian Aid,othering,Othering,0,4,0.0,0.335,structural
+migration,Human Rights & Humanitarian Aid,agency,Agency,4,4,100.0,-0.03,structural
+migration,Climate Crisis,conflict,Conflict,1,3,33.3333,0.504,structural
+migration,Climate Crisis,human_interest,Human Interest,1,3,33.3333,0.665,clears
+migration,Climate Crisis,economic,Economic,2,3,66.6667,0.719,clears
+migration,Climate Crisis,deservingness,Deservingness,1,3,33.3333,0.687,clears
+migration,Climate Crisis,responsibility,Responsibility,2,3,66.6667,0.318,structural
+migration,Climate Crisis,humanitarian,Humanitarian,2,3,66.6667,0.658,clears
+migration,Climate Crisis,security,Security,0,3,0.0,0.58,unresolved
+migration,Climate Crisis,policy,Policy,2,3,66.6667,0.603,clears
+migration,Climate Crisis,securitization,Securitization,0,3,0.0,0.382,structural
+migration,Climate Crisis,othering,Othering,2,3,66.6667,0.335,structural
+migration,Climate Crisis,agency,Agency,2,3,66.6667,-0.03,structural
+migration,Human Rights,conflict,Conflict,1,2,50.0,0.504,structural
+migration,Human Rights,human_interest,Human Interest,1,2,50.0,0.665,clears
+migration,Human Rights,economic,Economic,1,2,50.0,0.719,clears
+migration,Human Rights,deservingness,Deservingness,2,2,100.0,0.687,clears
+migration,Human Rights,responsibility,Responsibility,0,2,0.0,0.318,structural
+migration,Human Rights,humanitarian,Humanitarian,2,2,100.0,0.658,clears
+migration,Human Rights,security,Security,0,2,0.0,0.58,unresolved
+migration,Human Rights,policy,Policy,2,2,100.0,0.603,clears
+migration,Human Rights,securitization,Securitization,0,2,0.0,0.382,structural
+migration,Human Rights,othering,Othering,0,2,0.0,0.335,structural
+migration,Human Rights,agency,Agency,1,2,50.0,-0.03,structural

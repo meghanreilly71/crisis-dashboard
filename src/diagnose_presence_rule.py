@@ -53,7 +53,7 @@ def load():
     h = pd.DataFrame(rows[1:], columns=list(rows[0]))
     for c in h.columns:
         h[c] = h[c].map(lambda v: None if v is None else str(v).strip())
-    h["bi"] = h.benchmark_idx.astype(float).astype(int)
+    h["bi"] = h.benchmark_idx.astype(float).round().astype(int)
     l = pd.read_csv(
         ROOT / "data/annotated/benchmark_stability/promptB_run1.csv", dtype=str
     )

@@ -73,6 +73,7 @@ build_skipped_row = _sandbox["build_skipped_row"]
 flatten_frame_result = _sandbox["flatten_frame_result"]
 null_frame_row = _sandbox["null_frame_row"]
 extract_json = _sandbox["extract_json"]
+FramesNotFoundError = _sandbox["FramesNotFoundError"]
 derive_corpus_type = _sandbox["derive_corpus_type"]
 CARRY_COLS = _sandbox["CARRY_COLS"]
 ALL_FRAMES = _sandbox["ALL_FRAMES"]
@@ -618,6 +619,7 @@ def mode_parse() -> None:
         rows = []
         failed_ids: list[str] = []
         schema_errors: list[str] = []
+        frames_missing: list[str] = []
         n_on_topic = 0
         n_off_topic = 0
         n_failed = 0
@@ -646,6 +648,7 @@ def mode_parse() -> None:
             article_result["corpus_type"] = derive_corpus_type(row)
 
             article_ok = True
+            no_frames = False
             for pass_name in ["pass1", "pass2", "pass3", "pass4"]:
                 frames = pass_map[pass_name]
                 cid = make_custom_id(corpus, idx, pass_name)
@@ -671,6 +674,11 @@ def mode_parse() -> None:
                 try:
                     parsed = extract_json(res["content"])
                     article_result.update(flatten_frame_result(parsed, frames))
+                except FramesNotFoundError as e:
+                    frames_missing.append(f"{cid}: {e}")
+                    article_result.update(null_frame_row(frames))
+                    article_ok = False
+                    no_frames = True
                 except Exception as e:
                     schema_errors.append(f"{cid}: {e}")
                     article_result.update(null_frame_row(frames))
@@ -680,7 +688,12 @@ def mode_parse() -> None:
             for col in CARRY_COLS:
                 out_row[col] = row.get(col)
             out_row.update(article_result)
-            out_row["skipped_reason"] = None if article_ok else "batch_parse_error"
+            if article_ok:
+                out_row["skipped_reason"] = None
+            elif no_frames:
+                out_row["skipped_reason"] = "frames_key_not_found"
+            else:
+                out_row["skipped_reason"] = "batch_parse_error"
             out_row["prompt_variant"] = PROMPT_VARIANT
             out_row["run_number"] = RUN_NUMBER
             rows.append(out_row)
@@ -710,6 +723,7 @@ def mode_parse() -> None:
         print(f"    Off-topic skipped  : {n_off_topic:,}")
         print(f"    Failed/errored     : {n_failed:,}")
         print(f"    Schema parse errors: {len(schema_errors)}")
+        print(f"    Frames key not found: {len(frames_missing)}")
         print(
             f"    Output written     : {output_path}  ({len(written):,} rows verified)"
         )
@@ -732,6 +746,11 @@ def mode_parse() -> None:
         if schema_errors:
             print(f"\n  SCHEMA ERRORS:")
             for e in schema_errors[:10]:
+                print(f"    {e}")
+
+        if frames_missing:
+            print(f"\n  FRAMES KEY NOT FOUND ({len(frames_missing)}):")
+            for e in frames_missing[:10]:
                 print(f"    {e}")
 
     sep("PARSE COMPLETE")
@@ -1142,6 +1161,41 @@ def mode_chunk_parse() -> None:
             print(f"  {corpus}: aborting — remote copies are intact, retry later")
             continue
 
+        # Guardrail: every chunk contributes exactly one part file, plus one per
+        # completed makeup. A chunk whose requests partly failed lives in TWO
+        # files (chunk002_raw + chunk002_makeup_raw for the credit-exhaustion
+        # incident), so a count keyed only to len(chunks) would silently drop
+        # the makeup and concatenate a short file. Check the file count against
+        # the ledger before writing anything.
+        n_makeups = sum(
+            1
+            for c in chunks
+            for mk in c.get("makeups", [])
+            if mk.get("status") == "completed"
+        )
+        expected_parts = len(chunks) + n_makeups
+        if len(parts) != expected_parts:
+            print(
+                f"\n  FATAL: {corpus} part-file count mismatch — "
+                f"collected {len(parts)}, expected {expected_parts} "
+                f"({len(chunks)} chunks + {n_makeups} makeups)"
+            )
+            print("  Collected parts:")
+            for p in parts:
+                print(f"    {p.name}")
+            print("  Refusing to concatenate; fix the ledger or re-download.")
+            sys.exit(1)
+        missing_parts = [p for p in parts if not p.exists()]
+        if missing_parts:
+            print(f"\n  FATAL: {corpus} part files missing on disk:")
+            for p in missing_parts:
+                print(f"    {p}")
+            sys.exit(1)
+        print(
+            f"    part files: {len(parts)} "
+            f"({len(chunks)} chunks + {n_makeups} makeups) OK"
+        )
+
         raw_cache = ANNOTATED_DIR / f"batch_{corpus}_run{RUN_NUMBER}_raw.jsonl"
         total = 0
         with raw_cache.open("wb") as out:
@@ -1158,8 +1212,15 @@ def mode_chunk_parse() -> None:
             f"{'OK' if total == expected else 'MISMATCH'}"
         )
         if total != expected:
-            print(f"    {corpus}: refusing to parse a short file")
-            continue
+            # Do not leave the short file on disk: raw_cache is treated as a
+            # valid cache by later runs, so a truncated one would be picked up
+            # silently instead of re-downloaded.
+            raw_cache.unlink(missing_ok=True)
+            print(
+                f"\n  FATAL: {corpus} concatenated {total:,} lines, "
+                f"expected {expected:,} — removed {raw_cache.name}"
+            )
+            sys.exit(1)
 
         results: dict[str, dict] = {}
         with raw_cache.open() as f:
@@ -1190,7 +1251,7 @@ def _write_corpus_csv(corpus: str, results: dict) -> None:
     df = pd.read_csv(SAMPLED_DIR / SAMPLE_FILES[corpus])
     df["article_idx"] = range(len(df))
     pass_map = {p[0]: p[2] for p in PASSES_DEF}
-    rows, failed_ids, schema_errors = [], [], []
+    rows, failed_ids, schema_errors, frames_missing = [], [], [], []
     n_ok = n_skip = n_fail = 0
 
     for _, row in df.iterrows():
@@ -1209,6 +1270,7 @@ def _write_corpus_csv(corpus: str, results: dict) -> None:
         passes = applicable_passes(row)
         article: dict = {"corpus_type": derive_corpus_type(row)}
         article_ok = True
+        no_frames = False
         for pass_name in ["pass1", "pass2", "pass3", "pass4"]:
             frames = pass_map[pass_name]
             if pass_name not in passes:
@@ -1224,6 +1286,11 @@ def _write_corpus_csv(corpus: str, results: dict) -> None:
                 article.update(
                     flatten_frame_result(extract_json(res["content"]), frames)
                 )
+            except FramesNotFoundError as exc:
+                frames_missing.append(f"{idx}/{pass_name}: {exc}")
+                article.update(null_frame_row(frames))
+                article_ok = False
+                no_frames = True
             except Exception as exc:
                 schema_errors.append(f"{idx}/{pass_name}: {exc}")
                 article.update(null_frame_row(frames))
@@ -1233,7 +1300,12 @@ def _write_corpus_csv(corpus: str, results: dict) -> None:
         for col in CARRY_COLS:
             out_row[col] = row.get(col)
         out_row.update(article)
-        out_row["skipped_reason"] = None if article_ok else "batch_parse_error"
+        if article_ok:
+            out_row["skipped_reason"] = None
+        elif no_frames:
+            out_row["skipped_reason"] = "frames_key_not_found"
+        else:
+            out_row["skipped_reason"] = "batch_parse_error"
         out_row["prompt_variant"] = PROMPT_VARIANT
         out_row["run_number"] = RUN_NUMBER
         rows.append(out_row)
@@ -1252,6 +1324,10 @@ def _write_corpus_csv(corpus: str, results: dict) -> None:
         print(f"    {len(failed_ids):,} missing/errored requests")
     if schema_errors:
         print(f"    {len(schema_errors):,} schema errors")
+    if frames_missing:
+        print(f"    {len(frames_missing):,} responses with no 'frames' key")
+        for e in frames_missing[:10]:
+            print(f"      {e}")
     if missing:
         print(f"    ERROR: {len(missing)} article_idx missing from CSV")
 

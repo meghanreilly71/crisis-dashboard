@@ -1,73 +1,143 @@
-# ── data files ────────────────────────────────────────────────────────────────
-# All CSVs exceed GitHub's 100 MB file limit.
-# Store raw data externally (e.g. institutional drive, Zenodo, OSF).
+# ── 1. Corpus data — deny all tabular data by default ─────────────────────────
+# data/raw and data/processed carry full article bodies and run to ~1.5 GB
+# (migration.csv alone is 822 MB, far over GitHub's 100 MB file limit).
 *.csv
 
-# ── Annotation outputs carrying quoted article text ───────────────────────────
-data/annotated/climate_promptB_run1.csv
-data/annotated/migration_promptB_run1.csv
-data/validity/disagreement_review_promptB_run1.xlsx
-codebook_recheck_worksheet.xlsx
-data/benchmark/benchmark_annotation_sheet.csv.numbers
-data/benchmark/benchmark_annotation_sheet_climate_expansion - climate_expansion.csv
+# LLM API payloads and raw model responses (batch inputs/outputs).
+*.jsonl
+
+# Apple Numbers working files — the human annotation sheet holds article text.
+*.numbers
 
 
-# human reference-standard lineage: first_pass -> n114 -> revision1 -> postfix
+# ── 2. Re-included — metadata and aggregate tables, no article bodies ─────────
+# Human reference-standard lineage: first_pass -> n114 -> revision1 -> postfix
 !data/benchmark/snapshots/*.csv
-# validity / agreement / diagnostic tables
-!data/validity/*.csv
-# sample ID manifests (metadata only: idx, corpus, outlet, year, date, source_row)
+# Sample ID manifests (idx, corpus, outlet, year, date, source_row only)
 !data/benchmark/benchmark_ids.csv
 !data/benchmark/benchmark_ids_climate_expansion.csv
-# calibration results (token counts and costs, no text)
-!data/annotated/final_codebook/token_usage.csv
-
+# Validity / agreement / diagnostic tables
+!data/validity/*.csv
+# Benchmark stability runs — label-level model output, no title or body column
 !data/annotated/benchmark_stability/*.csv
-data/annotated/benchmark_stability/DEPRECATED_*.csv
+# Calibration results (token counts and costs, no text)
+!data/annotated/final_codebook/token_usage.csv
+# RQ1-4 aggregate long tables and Chapter 5 statistics: counts and percentages
+# only. These are the numbers behind every figure in the dashboard.
+!data/final/rq1_heatmap_long.csv
+!data/final/rq2_line_long.csv
+!data/final/rq3_outlet_long.csv
+!data/final/rq4_crosscrisis_long.csv
+!data/final/chapter5_significance_tests.csv
+# (data/final/frame_schema.json is not matched by any rule above and stays
+#  tracked. The RQ build scripts read it, so it must not be excluded.)
 
-# Run logs and session tooling
-data/annotated/chunk_monitor.log
-data/annotated/chunk_monitor.out
-data/annotated/benchmark_stability_log.txt
+# Analysis-ready dataset + final-codebook benchmark run. 
+!data/final/annotated_tidy.csv
+!data/annotated/final_codebook/promptB_run1_final.csv
+
+
+# ── 3. Unconditional re-denies — MUST stay after the negations ────────────────
+# Superseded / deprecated runs that section 2 would otherwise re-include.
+data/annotated/benchmark_stability/DEPRECATED_*.csv
+# Full-corpus annotation output, UNREDACTED (16 MB + 6.5 MB, one row/article).
+# The redacted, analysis-ready merge of these two is annotated_tidy.csv above.
+data/annotated/climate_promptB_run1.csv
+data/annotated/migration_promptB_run1.csv
+# Article bodies joined onto the annotated set (16 MB) — full text.
+data/final/article_table_data.csv
+# Human annotation sheets and review workbooks — all contain article text.
+data/benchmark/benchmark_annotation_sheet*.csv
+data/validity/disagreement_review_promptB_run1.xlsx
+codebook_recheck_worksheet.xlsx
+
+
+# ── 4. Audit / one-off scripts and their outputs ──────────────────────────────
+# Used once to verify something; not part of the reproducible pipeline.
 src/audit_project.py
 cleanup_manifest.csv
+# independent recount of disagreement direction and exclusion structure
+src/diagnose_disagreements.py
+# presence-rule threshold diagnostic (explicitly not a tuning procedure)
+src/diagnose_presence_rule.py
+src/event_analysis.py
+data/final/event_analysis_results.csv
 
-# Superseded earlier versions of validation tooling. 
+# Superseded earlier versions of the sampling / stability / calibration tooling.
 src/benchmark_sample.py
 src/benchmark_stability.py
 src/calibrate_output_length.py
 src/calibrate_output_length_promptB.py
 
-# Stray editor/session artefacts
-.Rhistory
-*.Rhistory
+# Pre-fix backup of the agreement tables, kept to show the effect of the
+# benchmark_idx rounding fix in validity_agreement.py. Local evidence only.
+data/validity/pre_fix_backup/
 
-# Re-exclude, unconditionally and last: these match the negations above by
-# directory but carry quoted article text.
-data/annotated/final_codebook/promptB_run1_final.csv
-data/annotated/climate_promptB_run1.csv
-data/annotated/migration_promptB_run1.csv
+# Unredacted originals of the two files re-included in section 2. NEVER COMMIT.
+data/_unredacted_local/
 
-# ── LLM API payloads and responses ────────────────────────────────────────────
-*.jsonl
+# Run logs and session tooling
+data/annotated/chunk_monitor.log
+data/annotated/chunk_monitor.out
+data/annotated/benchmark_stability_log.txt
 
-# ── Internal working documents ────────────────────────────────────────────────
+
+# ── 5. Scratch — exploratory outputs, figures, drafts, intermediates ──────────
+scratchpad_outputs/
+scratchpad/
+
+
+# ── 6. Dashboard — keep dashboard.html and every panel it was built from ──────
+!dashboard/dashboard.html
+!dashboard/rq1_heatmap.html
+!dashboard/rq2_temporal.html
+!dashboard/rq3_outlet.html
+!dashboard/rq4_crosscrisis.html
+
+# The article-table panel is 30 MB and embeds full article bodies for all 4,047
+# annotated articles. Excluded as an exact path so it cannot catch the pages
+# above. dashboard.html neither includes nor links to it.
+dashboard/rq_table.html
+
+
+# ── 7. Internal working documents ─────────────────────────────────────────────
 PROJECT_CONTEXT.md
 PROJECT_CONTEXT_pipeline.md
 
-# ── macOS ──────────────────────────────────────────────────────────────────────
-.DS_Store
 
-# ── Python ────────────────────────────────────────────────────────────────────
+# ── 8. Credentials ────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+
+# ── 9. Python ─────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *.pyo
-.env
+*.egg-info/
+.pytest_cache/
 venv/
 .venv/
-*.egg-info/
+env/
 dist/
 build/
 
-# ── Jupyter ───────────────────────────────────────────────────────────────────
+
+# ── 10. Jupyter ───────────────────────────────────────────────────────────────
 .ipynb_checkpoints/
+*-checkpoint.ipynb
+
+
+# ── 11. Editor / OS junk ──────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+.Rhistory
+*.Rhistory
+.idea/
+.vscode/
+*.swp
+*~
+.claude/settings.local.json

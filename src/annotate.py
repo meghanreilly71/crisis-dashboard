@@ -436,6 +436,44 @@ def extract_json(text: str) -> dict:
     return best
 
 
+class FramesNotFoundError(ValueError):
+    """No 'frames' object anywhere in a parsed response.
+
+    Distinct from a malformed-JSON error: the response parsed fine, it just
+    does not carry the frame payload we asked for. Callers map this to its own
+    skipped_reason so a parse gap never looks like a valid empty result.
+    """
+
+
+def find_frames(obj: Any) -> Optional[dict]:
+    """Locate the 'frames' dict at any nesting depth, shallowest match first.
+
+    The prompt asks for a bare {"frames": {...}} object, and almost every
+    response complies. A small number instead wrapped the whole answer in the
+    prompt's own section headings, e.g.
+
+        {"PART 1 — REASONING": {...}, "PART 2 — CONCLUSION": {"frames": {...}}}
+
+    extract_json returns the largest-spanning object, which for those is the
+    wrapper, so a top-level lookup found nothing. Searching breadth-first keeps
+    a top-level "frames" winning whenever it exists (identical behaviour for
+    compliant responses) while still reaching a nested one.
+    """
+    queue: list[Any] = [obj]
+    while queue:
+        nxt: list[Any] = []
+        for node in queue:
+            if isinstance(node, dict):
+                frames = node.get("frames")
+                if isinstance(frames, dict):
+                    return frames
+                nxt.extend(node.values())
+            elif isinstance(node, list):
+                nxt.extend(node)
+        queue = nxt
+    return None
+
+
 def call_api(client: openai.OpenAI, system: str, user: str, max_tokens: int) -> str:
     """Call the OpenAI API with exponential-backoff retry on rate-limit errors."""
     for attempt in range(MAX_RETRIES):
@@ -528,9 +566,18 @@ def derive_presence(slug: str, data: dict) -> tuple[Any, bool]:
 
 
 def flatten_frame_result(result: dict, frame_slugs: list[str]) -> dict:
-    """Flatten the 'frames' dict from an API response into per-column values."""
+    """Flatten the 'frames' dict from an API response into per-column values.
+
+    Raises FramesNotFoundError when no 'frames' object exists at any depth.
+    This used to fall back to an empty dict, which wrote a full row of Nones
+    with no flag — indistinguishable from a genuine all-absent annotation.
+    """
     row: dict[str, Any] = {}
-    frames = result.get("frames", {})
+    frames = find_frames(result)
+    if frames is None:
+        raise FramesNotFoundError(
+            f"no 'frames' key at any depth; top-level keys: {sorted(result)[:8]}"
+        )
     for slug in frame_slugs:
         data = frames.get(slug, {}) or {}
         present, overridden = derive_presence(slug, data)

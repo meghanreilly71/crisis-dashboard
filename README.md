@@ -41,10 +41,6 @@ output. Agreement is reported per label as Cohen's κ, Krippendorff's α, raw
 agreement and κ_max — with κ_max included because several labels have base rates
 that make κ ≥ 0.6 arithmetically unreachable, which raw κ alone would misrepresent.
 
-Seven of sixteen labels clear κ = 0.6; six fall below with an identified structural
-cause; three are below and unresolved. Per-label figures are the reporting unit —
-no pooled headline number.
-
 The agreement tables in `data/validity/` carry the full per-label figures, and the
 four-stage human reference-standard lineage in `data/benchmark/snapshots/` records
 the annotation as first coded, after an adjudication pass, and after a re-check
@@ -122,20 +118,54 @@ response files run from tens of megabytes to ~820 MB — well past GitHub's limi
 
 **Licensing.** Source articles come from Nexis Uni under licence and cannot be
 republished. This constrains more than the large files: several *small* files also
-carry article text and are excluded for licensing reasons alone, including the
-annotation output CSVs (which contain short verbatim quotations in
-`othering_evidence`), the human annotation workbooks, and the raw model responses
+carry article text and are excluded for licensing reasons alone, including the human
+annotation workbooks, the full-corpus annotation output, and the raw model responses
 (Prompt B's reasoning quotes source articles at length). File size is not a reliable
 proxy for whether a file can be published, so exclusions are listed by name in
 `.gitignore` rather than left to a blanket pattern.
 
 **Included:** all pipeline code, the human reference-standard snapshots, agreement
-and validity tables, sample ID manifests, measured token usage, and the X3 stability
-run outputs. These are the files needed to inspect the
-methodology and reproduce the analysis given the source data.
+and validity tables, sample ID manifests, measured token usage, the X3 stability run
+outputs, the RQ1–4 aggregate tables, the interactive dashboard, and — in redacted
+form — the analysis-ready annotated dataset (`data/final/annotated_tidy.csv`) and the
+final-codebook benchmark run (`data/annotated/final_codebook/promptB_run1_final.csv`).
 
-To reproduce: obtain the Nexis Uni exports, place them in `data/raw/`, and run the
-preprocessing pipeline before the annotation pipeline.
+To reproduce from source: obtain the Nexis Uni exports, place them in `data/raw/`, and
+run the preprocessing pipeline before the annotation pipeline.
+
+### Reproducibility notes
+
+**Redaction.** The two annotated datasets listed above ship with one column redacted.
+`othering_othering_evidence` held a one-sentence model quotation or paraphrase of the
+source article (max 25 words by prompt design); every such value is replaced with the
+literal string `[redacted]`. Rows where the model supplied no evidence keep their
+original empty/`null` sentinel, so presence-of-evidence remains analysable. No other
+column carries article prose — neither file has a title or body column, and the
+remaining free-text fields are closed categoricals or short actor labels. No script in
+`src/` reads the evidence column, so redaction does not affect any reported result.
+
+**What reruns from a clone.** Given the two redacted datasets, the entire analysis
+layer reproduces without the source corpora: `build_rq1_heatmap.py`,
+`build_rq2_temporal.py`, `build_rq3_outlet.py`, `build_rq4_crosscrisis.py`,
+`build_dashboard.py`, `chapter5_significance_tests.py`, and `validity_final.py`
+(the headline reliability figures).
+
+**What does not rerun.** `validity_agreement.py` reads the human annotation sheet
+`data/benchmark/benchmark_annotation_sheet.csv.numbers` directly. That file contains
+full article text and is not published, so the script cannot be rerun from a clone.
+Its outputs are committed instead and can be inspected as-is:
+`data/validity/agreement_per_label.csv`, `agreement_aggregate.csv`,
+`agreement_exclusions.csv`, and `agreement_report.md`. The same applies to
+`build_disagreement_sheet.py`, `build_recheck_worksheet.py`, and
+`build_postfix_snapshot.py`, whose committed outputs are the frozen snapshots under
+`data/benchmark/snapshots/`. Stages 0–2 (cleaning, sampling, centrality
+classification, annotation) require the licensed Nexis Uni exports and an OpenAI API
+key.
+
+**Dashboard.** `dashboard/dashboard.html` opens directly in a browser with no build
+step and no local data files — all four RQ payloads are embedded inline. It loads
+Plotly from a CDN, so it needs an internet connection to render. The four standalone
+panel pages it was assembled from are included alongside it as an audit trail.
 
 ## Setup
 

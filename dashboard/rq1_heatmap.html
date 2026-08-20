@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RQ1 — Frame prevalence by meta-topic</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+<style>
+  :root { --bg:#ffffff; --fg:#16181d; --muted:#5c6370; --line:#e3e6ea; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14161a; --fg:#e8eaed; --muted:#9aa2ad; --line:#2a2e35; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:28px 24px 56px; background:var(--bg); color:var(--fg);
+         font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .wrap { max-width:1280px; margin:0 auto; }
+  h1 { font-size:23px; margin:0 0 4px; letter-spacing:-0.01em; }
+  .sub { color:var(--muted); font-size:14px; margin:0 0 22px; }
+  .panel { border:1px solid var(--line); border-radius:10px; padding:14px 16px 6px;
+           margin-bottom:26px; }
+  .panel h2 { font-size:16px; margin:2px 0 2px; }
+  .panel .meta { color:var(--muted); font-size:13px; margin:0 0 8px; }
+  /* only the plot scrolls — headings stay put */
+  .chart-scroll { overflow-x:auto; }
+  .chart { min-width:880px; }
+  .caption { font-size:13px; color:var(--muted); border-top:1px solid var(--line);
+             margin-top:10px; padding:11px 2px 8px; }
+  .key { display:flex; flex-wrap:wrap; gap:16px; margin:6px 0 2px; font-size:12.5px;
+         color:var(--muted); }
+  .key span { display:flex; align-items:center; gap:6px; }
+  .sw { width:22px; height:12px; border-radius:2px; display:inline-block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>RQ1 &middot; Frame prevalence by meta-topic</h1>
+  <p class="sub">Share of articles in each meta-topic where the frame is present.
+     Cell colour is that percentage; hover for the underlying counts.</p>
+
+  <div class="panel">
+    <h2>Climate corpus</h2>
+    <p class="meta" id="m-climate"></p>
+    <div class="chart-scroll"><div id="climate" class="chart"></div></div>
+  </div>
+
+  <div class="panel">
+    <h2>Migration corpus</h2>
+    <p class="meta" id="m-migration"></p>
+    <div class="chart-scroll"><div id="migration" class="chart"></div></div>
+  </div>
+
+  <div class="caption">
+    <div class="key">
+      <span><span class="sw" style="background:#440154"></span>0%</span>
+      <span><span class="sw" style="background:#21918c"></span>50%</span>
+      <span><span class="sw" style="background:#fde725"></span>100%</span>
+      <span>&dagger; thin group (n &lt; 10)</span>
+    </div>
+    <p>&dagger; marks meta-topics with fewer than 10 articles. These are retained,
+      not suppressed, but single articles move their percentages a long way.</p>
+  </div>
+</div>
+
+<script>
+const DATA = {"climate": {"n_rows": 1049, "metas": ["Climate Politics & Policies", "Environmental Harm & Natural Disasters", "Economy & Finance", "Alternative/Renewable Energy & Sustainability", "Water Management", "National Politics", "Industries, Markets & Technologies", "Biodiversity, Nature & Science", "Combustion Fuels & Natural Resources", "Arts, Culture, Media & Sports", "Agriculture", "Global Politics & Politics Abroad", "Public Climate Discourse", "Housing & Urban Planning", "Corona", "Social Life", "Global Politics& Politcs Abroad", "Health"], "meta_n": [216, 135, 112, 72, 70, 67, 66, 66, 47, 42, 39, 35, 27, 26, 12, 8, 5, 4], "thin": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true], "frames": ["Conflict", "Human Interest", "Economic", "Deservingness", "Responsibility", "Scientific", "Crisis", "Solutions", "Victim", "Skepticism", "Securitization", "Othering", "Agency"], "frame_slugs": ["conflict", "human_interest", "economic", "deservingness", "responsibility", "scientific", "crisis", "solutions", "victim", "skepticism", "securitization", "othering", "agency"], "alpha": [0.504, 0.665, 0.719, 0.687, 0.318, 0.751, 0.516, 0.371, 0.762, 0.554, 0.382, 0.335, -0.03], "tier": ["structural", "clears", "clears", "clears", "structural", "clears", "unresolved", "unresolved", "clears", "structural", "structural", "structural", "structural"], "z": [[87.5, 37.5, 53.7037, 17.1296, 91.6667, 43.9815, 65.7407, 75.9259, 25.9259, 26.8519, 51.3889, 14.3519, 99.0741], [42.963, 43.7037, 51.1111, 5.1852, 88.1481, 75.5556, 68.8889, 64.4444, 47.4074, 13.3333, 52.5926, 2.2222, 96.2963], [83.9286, 16.0714, 84.8214, 12.5, 96.4286, 42.8571, 56.25, 90.1786, 20.5357, 23.2143, 36.6071, 14.2857, 100.0], [81.9444, 16.6667, 77.7778, 6.9444, 88.8889, 59.7222, 50.0, 88.8889, 20.8333, 40.2778, 34.7222, 11.1111, 98.6111], [54.2857, 40.0, 65.7143, 14.2857, 90.0, 60.0, 60.0, 85.7143, 38.5714, 5.7143, 50.0, 2.8571, 98.5714], [86.5672, 35.8209, 50.7463, 16.4179, 95.5224, 43.2836, 74.6269, 77.6119, 14.9254, 23.8806, 59.7015, 11.9403, 100.0], [77.2727, 24.2424, 71.2121, 10.6061, 92.4242, 50.0, 50.0, 90.9091, 25.7576, 28.7879, 40.9091, 7.5758, 98.4848], [63.6364, 34.8485, 56.0606, 4.5455, 87.8788, 74.2424, 51.5152, 77.2727, 24.2424, 27.2727, 45.4545, 3.0303, 98.4848], [87.234, 19.1489, 89.3617, 6.383, 95.7447, 53.1915, 53.1915, 91.4894, 12.766, 23.4043, 40.4255, 6.383, 100.0], [47.619, 73.8095, 30.9524, 4.7619, 69.0476, 35.7143, 73.8095, 61.9048, 30.9524, 16.6667, 47.619, 4.7619, 90.4762], [56.4103, 46.1538, 69.2308, 30.7692, 84.6154, 48.7179, 58.9744, 79.4872, 46.1538, 15.3846, 51.2821, 25.641, 100.0], [82.8571, 22.8571, 54.2857, 2.8571, 91.4286, 37.1429, 65.7143, 82.8571, 28.5714, 28.5714, 54.2857, 8.5714, 97.1429], [66.6667, 40.7407, 40.7407, 11.1111, 70.3704, 48.1481, 74.0741, 74.0741, 25.9259, 14.8148, 70.3704, 18.5185, 96.2963], [34.6154, 42.3077, 61.5385, 0.0, 84.6154, 65.3846, 34.6154, 84.6154, 19.2308, 11.5385, 19.2308, 11.5385, 96.1538], [83.3333, 41.6667, 66.6667, 16.6667, 91.6667, 50.0, 83.3333, 83.3333, 16.6667, 8.3333, 66.6667, 16.6667, 100.0], [75.0, 62.5, 37.5, 12.5, 87.5, 50.0, 62.5, 87.5, 25.0, 25.0, 37.5, 12.5, 100.0], [100.0, 0.0, 100.0, 0.0, 100.0, 40.0, 60.0, 80.0, 0.0, 40.0, 40.0, 40.0, 100.0], [50.0, 50.0, 50.0, 25.0, 50.0, 50.0, 0.0, 100.0, 0.0, 50.0, 0.0, 25.0, 100.0]], "customdata": [[[189, 216], [81, 216], [116, 216], [37, 216], [198, 216], [95, 216], [142, 216], [164, 216], [56, 216], [58, 216], [111, 216], [31, 216], [214, 216]], [[58, 135], [59, 135], [69, 135], [7, 135], [119, 135], [102, 135], [93, 135], [87, 135], [64, 135], [18, 135], [71, 135], [3, 135], [130, 135]], [[94, 112], [18, 112], [95, 112], [14, 112], [108, 112], [48, 112], [63, 112], [101, 112], [23, 112], [26, 112], [41, 112], [16, 112], [112, 112]], [[59, 72], [12, 72], [56, 72], [5, 72], [64, 72], [43, 72], [36, 72], [64, 72], [15, 72], [29, 72], [25, 72], [8, 72], [71, 72]], [[38, 70], [28, 70], [46, 70], [10, 70], [63, 70], [42, 70], [42, 70], [60, 70], [27, 70], [4, 70], [35, 70], [2, 70], [69, 70]], [[58, 67], [24, 67], [34, 67], [11, 67], [64, 67], [29, 67], [50, 67], [52, 67], [10, 67], [16, 67], [40, 67], [8, 67], [67, 67]], [[51, 66], [16, 66], [47, 66], [7, 66], [61, 66], [33, 66], [33, 66], [60, 66], [17, 66], [19, 66], [27, 66], [5, 66], [65, 66]], [[42, 66], [23, 66], [37, 66], [3, 66], [58, 66], [49, 66], [34, 66], [51, 66], [16, 66], [18, 66], [30, 66], [2, 66], [65, 66]], [[41, 47], [9, 47], [42, 47], [3, 47], [45, 47], [25, 47], [25, 47], [43, 47], [6, 47], [11, 47], [19, 47], [3, 47], [47, 47]], [[20, 42], [31, 42], [13, 42], [2, 42], [29, 42], [15, 42], [31, 42], [26, 42], [13, 42], [7, 42], [20, 42], [2, 42], [38, 42]], [[22, 39], [18, 39], [27, 39], [12, 39], [33, 39], [19, 39], [23, 39], [31, 39], [18, 39], [6, 39], [20, 39], [10, 39], [39, 39]], [[29, 35], [8, 35], [19, 35], [1, 35], [32, 35], [13, 35], [23, 35], [29, 35], [10, 35], [10, 35], [19, 35], [3, 35], [34, 35]], [[18, 27], [11, 27], [11, 27], [3, 27], [19, 27], [13, 27], [20, 27], [20, 27], [7, 27], [4, 27], [19, 27], [5, 27], [26, 27]], [[9, 26], [11, 26], [16, 26], [0, 26], [22, 26], [17, 26], [9, 26], [22, 26], [5, 26], [3, 26], [5, 26], [3, 26], [25, 26]], [[10, 12], [5, 12], [8, 12], [2, 12], [11, 12], [6, 12], [10, 12], [10, 12], [2, 12], [1, 12], [8, 12], [2, 12], [12, 12]], [[6, 8], [5, 8], [3, 8], [1, 8], [7, 8], [4, 8], [5, 8], [7, 8], [2, 8], [2, 8], [3, 8], [1, 8], [8, 8]], [[5, 5], [0, 5], [5, 5], [0, 5], [5, 5], [2, 5], [3, 5], [4, 5], [0, 5], [2, 5], [2, 5], [2, 5], [5, 5]], [[2, 4], [2, 4], [2, 4], [1, 4], [2, 4], [2, 4], [0, 4], [4, 4], [0, 4], [2, 4], [0, 4], [1, 4], [4, 4]]]}, "migration": {"n_rows": 2978, "metas": ["Asylum", "Migration Routes", "National Politics & Law", "Foreign Politics & Global Affairs", "Migration & Labour", "Migration & Integration", "Crime, Security & Migration", "EU Politics", "Migration & Housing", "Economics, Businesses, Industries, Markets & Finances", "Conflicts, Wars & Terrorism", "Education", "Religion", "Population Trends", "Families", "Health", "Housing", "Natural Disasters & Accidents", "Transportation", "Migration, Discrimination & Racism", "Migration & Racism", "Society & Inclusion", "Humanitarian Aid", "Human Rights & Humanitarian Aid", "Climate Crisis", "Human Rights"], "meta_n": [715, 329, 282, 251, 246, 208, 128, 118, 103, 101, 91, 78, 67, 61, 40, 35, 29, 25, 23, 16, 9, 8, 6, 4, 3, 2], "thin": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true], "frames": ["Conflict", "Human Interest", "Economic", "Deservingness", "Responsibility", "Humanitarian", "Security", "Policy", "Securitization", "Othering", "Agency"], "frame_slugs": ["conflict", "human_interest", "economic", "deservingness", "responsibility", "humanitarian", "security", "policy", "securitization", "othering", "agency"], "alpha": [0.504, 0.665, 0.719, 0.687, 0.318, 0.658, 0.58, 0.603, 0.382, 0.335, -0.03], "tier": ["structural", "clears", "clears", "clears", "structural", "clears", "unresolved", "clears", "structural", "structural", "structural"], "z": [[73.8462, 40.4196, 23.7762, 51.4685, 85.7343, 49.0909, 29.0909, 89.5105, 17.3427, 44.4755, 99.4406], [86.6261, 47.7204, 34.6505, 47.7204, 87.538, 58.6626, 53.7994, 86.3222, 35.5623, 65.0456, 98.4802], [86.5248, 36.8794, 30.8511, 57.4468, 83.3333, 42.5532, 40.4255, 91.4894, 13.1206, 58.156, 99.6454], [91.6335, 40.239, 31.8725, 58.5657, 87.251, 52.5896, 52.5896, 89.6414, 39.8406, 65.3386, 100.0], [80.4878, 47.1545, 56.0976, 54.065, 80.0813, 48.374, 39.8374, 90.2439, 15.8537, 67.4797, 100.0], [79.8077, 37.9808, 37.9808, 55.7692, 75.0, 37.9808, 42.7885, 88.4615, 14.4231, 56.25, 95.1923], [85.1562, 50.7812, 25.7812, 60.1562, 84.375, 46.0938, 53.125, 88.2812, 21.0938, 57.8125, 98.4375], [88.1356, 33.8983, 49.1525, 51.6949, 84.7458, 45.7627, 51.6949, 93.2203, 29.661, 63.5593, 99.1525], [74.7573, 26.2136, 49.5146, 52.4272, 84.466, 33.0097, 23.301, 94.1748, 8.7379, 42.7184, 98.0583], [60.396, 46.5347, 62.3762, 48.5149, 72.2772, 46.5347, 26.7327, 86.1386, 7.9208, 41.5842, 97.0297], [89.011, 57.1429, 26.3736, 42.8571, 78.022, 78.022, 51.6484, 65.9341, 47.2527, 60.4396, 100.0], [50.0, 64.1026, 23.0769, 52.5641, 74.359, 60.2564, 21.7949, 84.6154, 3.8462, 39.7436, 98.7179], [85.0746, 64.1791, 25.3731, 70.1493, 77.6119, 65.6716, 47.7612, 64.1791, 26.8657, 61.194, 94.0299], [45.9016, 4.918, 14.7541, 16.3934, 57.377, 6.5574, 14.7541, 86.8852, 1.6393, 29.5082, 75.4098], [67.5, 77.5, 15.0, 80.0, 55.0, 77.5, 2.5, 82.5, 10.0, 12.5, 100.0], [48.5714, 77.1429, 14.2857, 74.2857, 65.7143, 71.4286, 40.0, 80.0, 25.7143, 40.0, 100.0], [65.5172, 34.4828, 51.7241, 37.931, 86.2069, 41.3793, 24.1379, 93.1034, 3.4483, 55.1724, 100.0], [80.0, 84.0, 20.0, 68.0, 68.0, 76.0, 36.0, 72.0, 12.0, 40.0, 100.0], [60.8696, 60.8696, 30.4348, 65.2174, 73.913, 52.1739, 21.7391, 78.2609, 8.6957, 43.4783, 100.0], [81.25, 62.5, 25.0, 50.0, 75.0, 75.0, 43.75, 81.25, 18.75, 81.25, 100.0], [100.0, 33.3333, 44.4444, 55.5556, 88.8889, 33.3333, 66.6667, 88.8889, 22.2222, 77.7778, 100.0], [100.0, 50.0, 12.5, 100.0, 62.5, 75.0, 37.5, 87.5, 25.0, 75.0, 100.0], [66.6667, 100.0, 33.3333, 83.3333, 83.3333, 100.0, 0.0, 33.3333, 16.6667, 16.6667, 100.0], [100.0, 100.0, 0.0, 75.0, 100.0, 100.0, 25.0, 100.0, 25.0, 0.0, 100.0], [33.3333, 33.3333, 66.6667, 33.3333, 66.6667, 66.6667, 0.0, 66.6667, 0.0, 66.6667, 66.6667], [50.0, 50.0, 50.0, 100.0, 0.0, 100.0, 0.0, 100.0, 0.0, 0.0, 50.0]], "customdata": [[[528, 715], [289, 715], [170, 715], [368, 715], [613, 715], [351, 715], [208, 715], [640, 715], [124, 715], [318, 715], [711, 715]], [[285, 329], [157, 329], [114, 329], [157, 329], [288, 329], [193, 329], [177, 329], [284, 329], [117, 329], [214, 329], [324, 329]], [[244, 282], [104, 282], [87, 282], [162, 282], [235, 282], [120, 282], [114, 282], [258, 282], [37, 282], [164, 282], [281, 282]], [[230, 251], [101, 251], [80, 251], [147, 251], [219, 251], [132, 251], [132, 251], [225, 251], [100, 251], [164, 251], [251, 251]], [[198, 246], [116, 246], [138, 246], [133, 246], [197, 246], [119, 246], [98, 246], [222, 246], [39, 246], [166, 246], [246, 246]], [[166, 208], [79, 208], [79, 208], [116, 208], [156, 208], [79, 208], [89, 208], [184, 208], [30, 208], [117, 208], [198, 208]], [[109, 128], [65, 128], [33, 128], [77, 128], [108, 128], [59, 128], [68, 128], [113, 128], [27, 128], [74, 128], [126, 128]], [[104, 118], [40, 118], [58, 118], [61, 118], [100, 118], [54, 118], [61, 118], [110, 118], [35, 118], [75, 118], [117, 118]], [[77, 103], [27, 103], [51, 103], [54, 103], [87, 103], [34, 103], [24, 103], [97, 103], [9, 103], [44, 103], [101, 103]], [[61, 101], [47, 101], [63, 101], [49, 101], [73, 101], [47, 101], [27, 101], [87, 101], [8, 101], [42, 101], [98, 101]], [[81, 91], [52, 91], [24, 91], [39, 91], [71, 91], [71, 91], [47, 91], [60, 91], [43, 91], [55, 91], [91, 91]], [[39, 78], [50, 78], [18, 78], [41, 78], [58, 78], [47, 78], [17, 78], [66, 78], [3, 78], [31, 78], [77, 78]], [[57, 67], [43, 67], [17, 67], [47, 67], [52, 67], [44, 67], [32, 67], [43, 67], [18, 67], [41, 67], [63, 67]], [[28, 61], [3, 61], [9, 61], [10, 61], [35, 61], [4, 61], [9, 61], [53, 61], [1, 61], [18, 61], [46, 61]], [[27, 40], [31, 40], [6, 40], [32, 40], [22, 40], [31, 40], [1, 40], [33, 40], [4, 40], [5, 40], [40, 40]], [[17, 35], [27, 35], [5, 35], [26, 35], [23, 35], [25, 35], [14, 35], [28, 35], [9, 35], [14, 35], [35, 35]], [[19, 29], [10, 29], [15, 29], [11, 29], [25, 29], [12, 29], [7, 29], [27, 29], [1, 29], [16, 29], [29, 29]], [[20, 25], [21, 25], [5, 25], [17, 25], [17, 25], [19, 25], [9, 25], [18, 25], [3, 25], [10, 25], [25, 25]], [[14, 23], [14, 23], [7, 23], [15, 23], [17, 23], [12, 23], [5, 23], [18, 23], [2, 23], [10, 23], [23, 23]], [[13, 16], [10, 16], [4, 16], [8, 16], [12, 16], [12, 16], [7, 16], [13, 16], [3, 16], [13, 16], [16, 16]], [[9, 9], [3, 9], [4, 9], [5, 9], [8, 9], [3, 9], [6, 9], [8, 9], [2, 9], [7, 9], [9, 9]], [[8, 8], [4, 8], [1, 8], [8, 8], [5, 8], [6, 8], [3, 8], [7, 8], [2, 8], [6, 8], [8, 8]], [[4, 6], [6, 6], [2, 6], [5, 6], [5, 6], [6, 6], [0, 6], [2, 6], [1, 6], [1, 6], [6, 6]], [[4, 4], [4, 4], [0, 4], [3, 4], [4, 4], [4, 4], [1, 4], [4, 4], [1, 4], [0, 4], [4, 4]], [[1, 3], [1, 3], [2, 3], [1, 3], [2, 3], [2, 3], [0, 3], [2, 3], [0, 3], [2, 3], [2, 3]], [[1, 2], [1, 2], [1, 2], [2, 2], [0, 2], [2, 2], [0, 2], [2, 2], [0, 2], [0, 2], [1, 2]]]}};
+
+// Frame labels carry no reliability marker. Each cell's kappa is still in the
+// hover tooltip, and the tier data stays in the payload.
+function tickLabel(name, tier) {
+  return name;
+}
+
+function render(key, elId) {
+  const d = DATA[key];
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const fg = isDark ? '#e8eaed' : '#16181d';
+  const muted = isDark ? '#9aa2ad' : '#5c6370';
+  const grid = isDark ? '#2a2e35' : '#e3e6ea';
+
+  const xLabels = d.frames.map((f, i) => tickLabel(f, d.tier[i]));
+  const yLabels = d.metas.map((m, i) =>
+      (d.thin[i] ? '\u2020 ' : '') + m + '  (' + d.meta_n[i] + ')');
+
+  const cd = d.customdata.map((row, r) => row.map((c, i) =>
+      [c[0], c[1], d.alpha[i].toFixed(3), d.tier[i]]));
+
+  const trace = {
+    type: 'heatmap',
+    x: xLabels, y: yLabels, z: d.z, customdata: cd,
+    colorscale: 'Viridis', zmin: 0, zmax: 100,
+    xgap: 1.5, ygap: 1.5,
+    colorbar: {
+      title: { text: '% present', side: 'right', font: { size: 12, color: muted } },
+      tickfont: { size: 11, color: muted }, thickness: 12, len: 0.85,
+      outlinewidth: 0, ticksuffix: '%'
+    },
+    hovertemplate:
+      '<b>%{y}</b><br>' +
+      'Frame: %{x}<br>' +
+      'Present: <b>%{z:.1f}%</b><br>' +
+      'Count: %{customdata[0]} / %{customdata[1]} articles<br>' +
+      // literal alpha: Plotly hover labels do not decode HTML entities.
+      // customdata[3] is the tier; it stays in the payload for other consumers
+      // but is deliberately not rendered here.
+      // kappa, not alpha: the value shown is Cohen's kappa from validity_FINAL.csv
+      'Reliability: \u03ba = %{customdata[2]}' +
+      '<extra></extra>'
+  };
+
+  const height = Math.max(300, 46 + d.metas.length * 21);
+  Plotly.newPlot(elId, [trace], {
+    height: height,
+    margin: { l: 300, r: 96, t: 12, b: 104 },
+    paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
+    font: { color: fg, size: 12 },
+    xaxis: { side: 'bottom', tickangle: -42, tickfont: { size: 11.5, color: fg },
+             gridcolor: grid, ticks: '', automargin: true },
+    yaxis: { tickfont: { size: 11, color: fg }, autorange: 'reversed',
+             gridcolor: grid, ticks: '', automargin: true }
+  }, { displayModeBar: false, responsive: true });
+
+  document.getElementById('m-' + key).textContent =
+      d.n_rows.toLocaleString() + ' articles \u00b7 ' + d.metas.length +
+      ' meta-topics \u00b7 ' + d.frames.length + ' frames';
+}
+
+render('climate', 'climate');
+render('migration', 'migration');
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  render('climate', 'climate'); render('migration', 'migration');
+});
+</script>
+</body>
+</html>
